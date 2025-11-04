@@ -1,0 +1,20 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/bb/mac-arm64",
+  "version_file": ".versions/bb.cipd_version",
+  "install_mode": "copy",
+  "actual_install_mode": "copy",
+  "files": [
+    {
+      "name": "bb",
+      "size": 20269810,
+      "executable": true,
+      "hash": "ZdsH15jynfMlUboVPp5ku0tcohBX-1Cj5NkbFWgIdYMC"
+    },
+    {
+      "name": ".versions/bb.cipd_version",
+      "size": 113,
+      "hash": "_tEXIaK9yw2noyXrcrj-X-3kP2_m5DZ57gGmwu90n9sC"
+    }
+  ]
+}

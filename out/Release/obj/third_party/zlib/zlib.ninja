@@ -1,0 +1,63 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DZLIB_IMPLEMENTATION -DZLIB_DEBUG -DADLER32_SIMD_NEON -DINFLATE_CHUNK_SIMD_NEON -DINFLATE_CHUNK_READ_64LE -DDEFLATE_CHUNK_WRITE_64LE -DDEFLATE_SLIDE_HASH_NEON -DCRC32_ARMV8_CRC32 -DARMV8_OS_MACOS
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/zlib
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-incompatible-pointer-types -Wunused-variable
+cflags_c = -std=c11
+label_name = zlib
+target_out_dir = obj/third_party/zlib
+target_output_name = libchrome_zlib
+
+build obj/third_party/zlib/zlib/adler32.o: cc ../../third_party/zlib/adler32.c | ../../unsafe_buffers_paths.txt
+  source_file_part = adler32.c
+  source_name_part = adler32
+build obj/third_party/zlib/zlib/compress.o: cc ../../third_party/zlib/compress.c | ../../unsafe_buffers_paths.txt
+  source_file_part = compress.c
+  source_name_part = compress
+build obj/third_party/zlib/zlib/cpu_features.o: cc ../../third_party/zlib/cpu_features.c | ../../unsafe_buffers_paths.txt
+  source_file_part = cpu_features.c
+  source_name_part = cpu_features
+build obj/third_party/zlib/zlib/crc32.o: cc ../../third_party/zlib/crc32.c | ../../unsafe_buffers_paths.txt
+  source_file_part = crc32.c
+  source_name_part = crc32
+build obj/third_party/zlib/zlib/deflate.o: cc ../../third_party/zlib/deflate.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deflate.c
+  source_name_part = deflate
+build obj/third_party/zlib/zlib/gzclose.o: cc ../../third_party/zlib/gzclose.c | ../../unsafe_buffers_paths.txt
+  source_file_part = gzclose.c
+  source_name_part = gzclose
+build obj/third_party/zlib/zlib/gzlib.o: cc ../../third_party/zlib/gzlib.c | ../../unsafe_buffers_paths.txt
+  source_file_part = gzlib.c
+  source_name_part = gzlib
+build obj/third_party/zlib/zlib/gzread.o: cc ../../third_party/zlib/gzread.c | ../../unsafe_buffers_paths.txt
+  source_file_part = gzread.c
+  source_name_part = gzread
+build obj/third_party/zlib/zlib/gzwrite.o: cc ../../third_party/zlib/gzwrite.c | ../../unsafe_buffers_paths.txt
+  source_file_part = gzwrite.c
+  source_name_part = gzwrite
+build obj/third_party/zlib/zlib/infback.o: cc ../../third_party/zlib/infback.c | ../../unsafe_buffers_paths.txt
+  source_file_part = infback.c
+  source_name_part = infback
+build obj/third_party/zlib/zlib/inffast.o: cc ../../third_party/zlib/inffast.c | ../../unsafe_buffers_paths.txt
+  source_file_part = inffast.c
+  source_name_part = inffast
+build obj/third_party/zlib/zlib/inftrees.o: cc ../../third_party/zlib/inftrees.c | ../../unsafe_buffers_paths.txt
+  source_file_part = inftrees.c
+  source_name_part = inftrees
+build obj/third_party/zlib/zlib/trees.o: cc ../../third_party/zlib/trees.c | ../../unsafe_buffers_paths.txt
+  source_file_part = trees.c
+  source_name_part = trees
+build obj/third_party/zlib/zlib/uncompr.o: cc ../../third_party/zlib/uncompr.c | ../../unsafe_buffers_paths.txt
+  source_file_part = uncompr.c
+  source_name_part = uncompr
+build obj/third_party/zlib/zlib/zutil.o: cc ../../third_party/zlib/zutil.c | ../../unsafe_buffers_paths.txt
+  source_file_part = zutil.c
+  source_name_part = zutil
+
+build ./libchrome_zlib.dylib ./libchrome_zlib.dylib.TOC: solink obj/third_party/zlib/zlib/adler32.o obj/third_party/zlib/zlib/compress.o obj/third_party/zlib/zlib/cpu_features.o obj/third_party/zlib/zlib/crc32.o obj/third_party/zlib/zlib/deflate.o obj/third_party/zlib/zlib/gzclose.o obj/third_party/zlib/zlib/gzlib.o obj/third_party/zlib/zlib/gzread.o obj/third_party/zlib/zlib/gzwrite.o obj/third_party/zlib/zlib/infback.o obj/third_party/zlib/zlib/inffast.o obj/third_party/zlib/zlib/inftrees.o obj/third_party/zlib/zlib/trees.o obj/third_party/zlib/zlib/uncompr.o obj/third_party/zlib/zlib/zutil.o obj/third_party/zlib/zlib_adler32_simd/adler32_simd.o obj/third_party/zlib/zlib_data_chunk_simd/inffast_chunk.o obj/third_party/zlib/zlib_data_chunk_simd/inflate.o obj/third_party/zlib/zlib_arm_crc32/crc32_simd.o | ./libc++_chrome.dylib.TOC ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt || phony/third_party/zlib/zlib_adler32_simd phony/third_party/zlib/zlib_data_chunk_simd phony/third_party/zlib/zlib_arm_crc32 phony/build/config/shared_library_deps
+  ldflags = -fuse-ld=lld -Wl,-fatal_warnings -Wl,--color-diagnostics -Wl,--strict-auto-link -Wl,--no-call-graph-profile-sort --target=arm64-apple-macos -Wl,-fixup_chains -Wl,-mllvm,-enable-machine-outliner=never -no-canonical-prefixes -nostdlib++ -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -Wl,-ObjC -Wl,-rpath,@loader_path/. -Wl,-rpath,@loader_path/../../.. -Wl,--no-warn-duplicate-rpath -Wl,-no_warn_duplicate_libraries -Werror
+  libs = ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a
+  frameworks =
+  swiftmodules =
+  output_extension = .dylib
+  output_dir = .
+  solibs = ./libc++_chrome.dylib

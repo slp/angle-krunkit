@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/luci/led/mac-arm64",
+  "version_file": ".versions/led.cipd_version",
+  "files": [
+    {
+      "name": "led",
+      "size": 27095602,
+      "executable": true,
+      "hash": "BWtzmLVobySiUrlhlfkZHwS9l0CfIv8n0HF-gKSJT0MC"
+    },
+    {
+      "name": ".versions/led.cipd_version",
+      "size": 119,
+      "hash": "65w6tQBpmexypypmsuK-2iy7-kLG-TsaOYGb6rlUISYC"
+    }
+  ]
+}

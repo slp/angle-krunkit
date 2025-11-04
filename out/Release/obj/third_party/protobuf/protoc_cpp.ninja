@@ -1,0 +1,74 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DGOOGLE_PROTOBUF_NO_RTTI -DPROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT -DHAVE_PTHREAD -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/protobuf/third_party/utf8_range -I../../third_party/protobuf/src -I../../third_party/abseil-cpp
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-deprecated-this-capture
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = protoc_cpp
+target_out_dir = obj/third_party/protobuf
+target_output_name = protoc_cpp
+
+build obj/third_party/protobuf/protoc_cpp/enum.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/enum.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = enum.cc
+  source_name_part = enum
+build obj/third_party/protobuf/protoc_cpp/extension.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/extension.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = extension.cc
+  source_name_part = extension
+build obj/third_party/protobuf/protoc_cpp/field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = field.cc
+  source_name_part = field
+build obj/third_party/protobuf/protoc_cpp/field_chunk.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_chunk.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = field_chunk.cc
+  source_name_part = field_chunk
+build obj/third_party/protobuf/protoc_cpp/cord_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/cord_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = cord_field.cc
+  source_name_part = cord_field
+build obj/third_party/protobuf/protoc_cpp/enum_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/enum_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = enum_field.cc
+  source_name_part = enum_field
+build obj/third_party/protobuf/protoc_cpp/map_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/map_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = map_field.cc
+  source_name_part = map_field
+build obj/third_party/protobuf/protoc_cpp/message_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/message_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = message_field.cc
+  source_name_part = message_field
+build obj/third_party/protobuf/protoc_cpp/primitive_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = primitive_field.cc
+  source_name_part = primitive_field
+build obj/third_party/protobuf/protoc_cpp/string_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/string_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = string_field.cc
+  source_name_part = string_field
+build obj/third_party/protobuf/protoc_cpp/string_view_field.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/field_generators/string_view_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = string_view_field.cc
+  source_name_part = string_view_field
+build obj/third_party/protobuf/protoc_cpp/file.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/file.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = file.cc
+  source_name_part = file
+build obj/third_party/protobuf/protoc_cpp/generator.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/generator.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = generator.cc
+  source_name_part = generator
+build obj/third_party/protobuf/protoc_cpp/helpers.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/helpers.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = helpers.cc
+  source_name_part = helpers
+build obj/third_party/protobuf/protoc_cpp/ifndef_guard.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/ifndef_guard.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ifndef_guard.cc
+  source_name_part = ifndef_guard
+build obj/third_party/protobuf/protoc_cpp/message.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/message.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = message.cc
+  source_name_part = message
+build obj/third_party/protobuf/protoc_cpp/message_layout_helper.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/message_layout_helper.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = message_layout_helper.cc
+  source_name_part = message_layout_helper
+build obj/third_party/protobuf/protoc_cpp/namespace_printer.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/namespace_printer.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = namespace_printer.cc
+  source_name_part = namespace_printer
+build obj/third_party/protobuf/protoc_cpp/parse_function_generator.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/parse_function_generator.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = parse_function_generator.cc
+  source_name_part = parse_function_generator
+build obj/third_party/protobuf/protoc_cpp/service.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/service.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = service.cc
+  source_name_part = service
+build obj/third_party/protobuf/protoc_cpp/tracker.o: cxx ../../third_party/protobuf/src/google/protobuf/compiler/cpp/tracker.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = tracker.cc
+  source_name_part = tracker
+
+build phony/third_party/protobuf/protoc_cpp: phony obj/third_party/protobuf/protoc_cpp/enum.o obj/third_party/protobuf/protoc_cpp/extension.o obj/third_party/protobuf/protoc_cpp/field.o obj/third_party/protobuf/protoc_cpp/field_chunk.o obj/third_party/protobuf/protoc_cpp/cord_field.o obj/third_party/protobuf/protoc_cpp/enum_field.o obj/third_party/protobuf/protoc_cpp/map_field.o obj/third_party/protobuf/protoc_cpp/message_field.o obj/third_party/protobuf/protoc_cpp/primitive_field.o obj/third_party/protobuf/protoc_cpp/string_field.o obj/third_party/protobuf/protoc_cpp/string_view_field.o obj/third_party/protobuf/protoc_cpp/file.o obj/third_party/protobuf/protoc_cpp/generator.o obj/third_party/protobuf/protoc_cpp/helpers.o obj/third_party/protobuf/protoc_cpp/ifndef_guard.o obj/third_party/protobuf/protoc_cpp/message.o obj/third_party/protobuf/protoc_cpp/message_layout_helper.o obj/third_party/protobuf/protoc_cpp/namespace_printer.o obj/third_party/protobuf/protoc_cpp/parse_function_generator.o obj/third_party/protobuf/protoc_cpp/service.o obj/third_party/protobuf/protoc_cpp/tracker.o || obj/third_party/protobuf/libprotobuf_full.a ./libthird_party_abseil-cpp_absl.dylib.TOC phony/third_party/protobuf/utf8_range

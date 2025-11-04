@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/mac_toolchain/mac-arm64",
+  "version_file": ".versions/mac_toolchain.cipd_version",
+  "files": [
+    {
+      "name": "mac_toolchain",
+      "size": 15325106,
+      "executable": true,
+      "hash": "tM1NAOBzWZPu-9aLDN6-POWinqGY4g_ljSvdGeiTCJAC"
+    },
+    {
+      "name": ".versions/mac_toolchain.cipd_version",
+      "size": 124,
+      "hash": "3hd8AbukVDXWyRcNPOfTbdPqnLQ-U09-4zT9M9wZmyUC"
+    }
+  ]
+}

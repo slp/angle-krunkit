@@ -1,0 +1,77 @@
+defines = -DASTCENC_DECOMPRESS_ONLY=1 -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -O2
+cflags_cc = -Wno-unused-but-set-variable -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden
+label_name = astcenc
+target_out_dir = obj/third_party/astc-encoder
+target_output_name = astcenc
+
+build obj/third_party/astc-encoder/astcenc/astcenc_averages_and_directions.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_averages_and_directions.cpp
+  source_file_part = astcenc_averages_and_directions.cpp
+  source_name_part = astcenc_averages_and_directions
+build obj/third_party/astc-encoder/astcenc/astcenc_block_sizes.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_block_sizes.cpp
+  source_file_part = astcenc_block_sizes.cpp
+  source_name_part = astcenc_block_sizes
+build obj/third_party/astc-encoder/astcenc/astcenc_color_quantize.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_color_quantize.cpp
+  source_file_part = astcenc_color_quantize.cpp
+  source_name_part = astcenc_color_quantize
+build obj/third_party/astc-encoder/astcenc/astcenc_color_unquantize.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_color_unquantize.cpp
+  source_file_part = astcenc_color_unquantize.cpp
+  source_name_part = astcenc_color_unquantize
+build obj/third_party/astc-encoder/astcenc/astcenc_compress_symbolic.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_compress_symbolic.cpp
+  source_file_part = astcenc_compress_symbolic.cpp
+  source_name_part = astcenc_compress_symbolic
+build obj/third_party/astc-encoder/astcenc/astcenc_compute_variance.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_compute_variance.cpp
+  source_file_part = astcenc_compute_variance.cpp
+  source_name_part = astcenc_compute_variance
+build obj/third_party/astc-encoder/astcenc/astcenc_decompress_symbolic.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_decompress_symbolic.cpp
+  source_file_part = astcenc_decompress_symbolic.cpp
+  source_name_part = astcenc_decompress_symbolic
+build obj/third_party/astc-encoder/astcenc/astcenc_diagnostic_trace.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_diagnostic_trace.cpp
+  source_file_part = astcenc_diagnostic_trace.cpp
+  source_name_part = astcenc_diagnostic_trace
+build obj/third_party/astc-encoder/astcenc/astcenc_entry.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_entry.cpp
+  source_file_part = astcenc_entry.cpp
+  source_name_part = astcenc_entry
+build obj/third_party/astc-encoder/astcenc/astcenc_find_best_partitioning.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_find_best_partitioning.cpp
+  source_file_part = astcenc_find_best_partitioning.cpp
+  source_name_part = astcenc_find_best_partitioning
+build obj/third_party/astc-encoder/astcenc/astcenc_ideal_endpoints_and_weights.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_ideal_endpoints_and_weights.cpp
+  source_file_part = astcenc_ideal_endpoints_and_weights.cpp
+  source_name_part = astcenc_ideal_endpoints_and_weights
+build obj/third_party/astc-encoder/astcenc/astcenc_image.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_image.cpp
+  source_file_part = astcenc_image.cpp
+  source_name_part = astcenc_image
+build obj/third_party/astc-encoder/astcenc/astcenc_integer_sequence.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_integer_sequence.cpp
+  source_file_part = astcenc_integer_sequence.cpp
+  source_name_part = astcenc_integer_sequence
+build obj/third_party/astc-encoder/astcenc/astcenc_mathlib.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_mathlib.cpp
+  source_file_part = astcenc_mathlib.cpp
+  source_name_part = astcenc_mathlib
+build obj/third_party/astc-encoder/astcenc/astcenc_mathlib_softfloat.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_mathlib_softfloat.cpp
+  source_file_part = astcenc_mathlib_softfloat.cpp
+  source_name_part = astcenc_mathlib_softfloat
+build obj/third_party/astc-encoder/astcenc/astcenc_partition_tables.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_partition_tables.cpp
+  source_file_part = astcenc_partition_tables.cpp
+  source_name_part = astcenc_partition_tables
+build obj/third_party/astc-encoder/astcenc/astcenc_percentile_tables.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_percentile_tables.cpp
+  source_file_part = astcenc_percentile_tables.cpp
+  source_name_part = astcenc_percentile_tables
+build obj/third_party/astc-encoder/astcenc/astcenc_pick_best_endpoint_format.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_pick_best_endpoint_format.cpp
+  source_file_part = astcenc_pick_best_endpoint_format.cpp
+  source_name_part = astcenc_pick_best_endpoint_format
+build obj/third_party/astc-encoder/astcenc/astcenc_quantization.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_quantization.cpp
+  source_file_part = astcenc_quantization.cpp
+  source_name_part = astcenc_quantization
+build obj/third_party/astc-encoder/astcenc/astcenc_symbolic_physical.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_symbolic_physical.cpp
+  source_file_part = astcenc_symbolic_physical.cpp
+  source_name_part = astcenc_symbolic_physical
+build obj/third_party/astc-encoder/astcenc/astcenc_weight_align.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_weight_align.cpp
+  source_file_part = astcenc_weight_align.cpp
+  source_name_part = astcenc_weight_align
+build obj/third_party/astc-encoder/astcenc/astcenc_weight_quant_xfer_tables.o: cxx ../../third_party/astc-encoder/src/Source/astcenc_weight_quant_xfer_tables.cpp
+  source_file_part = astcenc_weight_quant_xfer_tables.cpp
+  source_name_part = astcenc_weight_quant_xfer_tables
+
+build phony/third_party/astc-encoder/astcenc: phony obj/third_party/astc-encoder/astcenc/astcenc_averages_and_directions.o obj/third_party/astc-encoder/astcenc/astcenc_block_sizes.o obj/third_party/astc-encoder/astcenc/astcenc_color_quantize.o obj/third_party/astc-encoder/astcenc/astcenc_color_unquantize.o obj/third_party/astc-encoder/astcenc/astcenc_compress_symbolic.o obj/third_party/astc-encoder/astcenc/astcenc_compute_variance.o obj/third_party/astc-encoder/astcenc/astcenc_decompress_symbolic.o obj/third_party/astc-encoder/astcenc/astcenc_diagnostic_trace.o obj/third_party/astc-encoder/astcenc/astcenc_entry.o obj/third_party/astc-encoder/astcenc/astcenc_find_best_partitioning.o obj/third_party/astc-encoder/astcenc/astcenc_ideal_endpoints_and_weights.o obj/third_party/astc-encoder/astcenc/astcenc_image.o obj/third_party/astc-encoder/astcenc/astcenc_integer_sequence.o obj/third_party/astc-encoder/astcenc/astcenc_mathlib.o obj/third_party/astc-encoder/astcenc/astcenc_mathlib_softfloat.o obj/third_party/astc-encoder/astcenc/astcenc_partition_tables.o obj/third_party/astc-encoder/astcenc/astcenc_percentile_tables.o obj/third_party/astc-encoder/astcenc/astcenc_pick_best_endpoint_format.o obj/third_party/astc-encoder/astcenc/astcenc_quantization.o obj/third_party/astc-encoder/astcenc/astcenc_symbolic_physical.o obj/third_party/astc-encoder/astcenc/astcenc_weight_align.o obj/third_party/astc-encoder/astcenc/astcenc_weight_quant_xfer_tables.o

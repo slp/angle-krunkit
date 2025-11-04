@@ -1,0 +1,9 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT -DANGLE_USE_CUSTOM_LIBVULKAN -DLOADER_USE_UNSAFE_FILE_SEARCH=1 -DVK_USE_PLATFORM_METAL_EXT -DVK_USE_PLATFORM_MACOS_MVK -DANGLE_USE_ABSEIL -DABSL_ALLOCATOR_NOTHROW=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0
+framework_dirs =
+include_dirs = -I../../buildtools/third_party/libc++ -I../../include -I../../src -I../../third_party/vulkan-loader/src/loader/generated -I../../third_party/vulkan-loader/src/loader -I../../third_party/vulkan-headers/src/include -I../../src/common/base -I../../src/common/third_party/xxhash -I../../third_party/abseil-cpp
+label_name = vulkan
+target_out_dir = obj/src/common/vulkan
+target_output_name = vulkan
+
+
+build phony/src/common/vulkan/vulkan: phony || phony/src/common/vulkan/angle_libvulkan phony/src/common/vulkan/angle_vulkan_entry_points phony/src/common/vulkan/angle_vulkan_icd obj/third_party/vulkan-loader/src/libvulkan.a obj/libangle_common.a ./libthird_party_abseil-cpp_absl.dylib.TOC phony/xxhash

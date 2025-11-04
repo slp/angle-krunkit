@@ -1,0 +1,86 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT -DANGLE_EGL_LIBRARY_NAME=\"libEGL\" -DANGLE_GLESV2_LIBRARY_NAME=\"libGLESv2\" -DANGLE_MESA_EGL_LIBRARY_NAME=\"mesa/src/egl/libEGL\" -DANGLE_MESA_GLESV2_LIBRARY_NAME=\"mesa/src/mapi/es2api/libGLESv2\" -DANGLE_VULKAN_SECONDARIES_EGL_LIBRARY_NAME=\"libEGL_vulkan_secondaries\" -DANGLE_VULKAN_SECONDARIES_GLESV2_LIBRARY_NAME=\"libGLESv2_vulkan_secondaries\" -DANGLE_DEQP_LIBTESTER_IMPLEMENTATION -DLIBANGLE_IMPLEMENTATION -DANGLE_ENABLE_OVERLAY=1 -DANGLE_PLATFORM_EXPORT= -DDEQP_SUPPORT_GLES31=1 -DDEQP_SUPPORT_GLES3=1 -DDEQP_SUPPORT_GLES2=1 -DDEQP_SUPPORT_EGL=1 -DDEQP_TARGET_NAME=\"angle\" -DDEQP_GLES31_RUNTIME_LOAD=1 -DDEQP_GLES3_RUNTIME_LOAD=1 -DDEQP_GLES2_RUNTIME_LOAD=1 -DQP_SUPPORT_PNG=1 -D_HAS_EXCEPTIONS=1 -D_MBCS -DANGLE_DEQP_DATA_DIR=\"gen/vk_gl_cts_data/data\" -D_XOPEN_SOURCE=700 -DDE_FENV_ACCESS_ON=_Pragma\(\"STDC\$ FENV_ACCESS\$ ON\"\) -DANGLE_USE_ABSEIL -DABSL_ALLOCATOR_NOTHROW=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0 -DGL_GLES_PROTOTYPES=0 -DEGL_EGL_PROTOTYPES=0 -DANGLE_USE_UTIL_LOADER
+framework_dirs =
+include_dirs = -I../../buildtools/third_party/libc++ -I../../include -I../../src -I../../third_party/VK-GL-CTS/src/framework/common -I../../third_party/VK-GL-CTS/src/framework/randomshaders -I../../third_party/VK-GL-CTS/src/framework/referencerenderer -I../../third_party/VK-GL-CTS/src/executor -I../../third_party/VK-GL-CTS/src/execserver -I../../third_party/VK-GL-CTS/src/framework/platform/lnx -I../../third_party/VK-GL-CTS/src/framework/platform/lnx/X11 -I../../third_party/VK-GL-CTS/src/framework/platform/null -I../../third_party/VK-GL-CTS/src/framework/platform/win32 -I../../third_party/VK-GL-CTS/src/framework/xexml -I../../third_party/VK-GL-CTS/src/modules/gles2 -I../../third_party/VK-GL-CTS/src/modules/gles2/functional -I../../third_party/VK-GL-CTS/src/modules/gles2/accuracy -I../../third_party/VK-GL-CTS/src/modules/gles2/performance -I../../third_party/VK-GL-CTS/src/modules/gles2/stress -I../../third_party/VK-GL-CTS/src/modules/gles2/usecases -I../../third_party/VK-GL-CTS/src/modules/gles3 -I../../third_party/VK-GL-CTS/src/modules/gles3/functional -I../../third_party/VK-GL-CTS/src/modules/gles3/accuracy -I../../third_party/VK-GL-CTS/src/modules/gles3/performance -I../../third_party/VK-GL-CTS/src/modules/gles3/stress -I../../third_party/VK-GL-CTS/src/modules/gles3/usecases -I../../third_party/VK-GL-CTS/src/modules/gles31 -I../../third_party/VK-GL-CTS/src/modules/gles31/functional -I../../third_party/VK-GL-CTS/src/modules/gles31/stress -I../../third_party/VK-GL-CTS/src/modules/glusecases -I../../third_party/VK-GL-CTS/src/modules/egl -I../../third_party/glslang/src -I../../third_party/spirv-tools/src -I../../third_party/VK-GL-CTS/src/framework/delibs/decpp -I../../third_party/VK-GL-CTS/src/framework/delibs/debase -I../../third_party/VK-GL-CTS/src/framework/delibs/depool -I../../third_party/VK-GL-CTS/src/framework/delibs/dethread -I../../third_party/VK-GL-CTS/src/framework/delibs/deutil -I../../third_party/VK-GL-CTS/src/framework/delibs/destream -I../../third_party/VK-GL-CTS/src/framework/qphelper -I../../third_party/libpng/src -I../../third_party/VK-GL-CTS/src/framework/egl -I../../third_party/VK-GL-CTS/src/framework/egl/wrapper -I../../third_party/VK-GL-CTS/src/framework/opengl -I../../third_party/VK-GL-CTS/src/framework/opengl/simplereference -I../../third_party/VK-GL-CTS/src/framework/opengl/wrapper -I../../third_party/VK-GL-CTS/src/modules/glshared -I../../src/common/base -I../../src/common/third_party/xxhash -I../../third_party/abseil-cpp -I../..
+cflags = -Wno-nonportable-include-path -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-tautological-constant-out-of-range-compare
+cflags_cc = -std=c++20 -Wno-trigraphs -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety -Wno-delete-non-virtual-dtor -Wno-deprecated -Wno-self-assign -Wno-sizeof-array-div -Wno-string-conversion -Wno-unused-function -Wno-unused-local-typedef -Wno-unused-result -fwrapv -fexceptions -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = angle_deqp_libtester
+target_out_dir = obj/src/tests
+target_output_name = angle_deqp_libtester
+
+build obj/src/tests/angle_deqp_libtester/xsDefs.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsDefs.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsDefs.cpp
+  source_name_part = xsDefs
+build obj/src/tests/angle_deqp_libtester/xsExecutionServer.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsExecutionServer.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsExecutionServer.cpp
+  source_name_part = xsExecutionServer
+build obj/src/tests/angle_deqp_libtester/xsPosixFileReader.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsPosixFileReader.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsPosixFileReader.cpp
+  source_name_part = xsPosixFileReader
+build obj/src/tests/angle_deqp_libtester/xsPosixTestProcess.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsPosixTestProcess.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsPosixTestProcess.cpp
+  source_name_part = xsPosixTestProcess
+build obj/src/tests/angle_deqp_libtester/xsProtocol.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsProtocol.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsProtocol.cpp
+  source_name_part = xsProtocol
+build obj/src/tests/angle_deqp_libtester/xsTcpServer.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsTcpServer.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsTcpServer.cpp
+  source_name_part = xsTcpServer
+build obj/src/tests/angle_deqp_libtester/xsTestDriver.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsTestDriver.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsTestDriver.cpp
+  source_name_part = xsTestDriver
+build obj/src/tests/angle_deqp_libtester/xsTestProcess.o: cxx ../../third_party/VK-GL-CTS/src/execserver/xsTestProcess.cpp || phony/build/chromeos_buildflags
+  source_file_part = xsTestProcess.cpp
+  source_name_part = xsTestProcess
+build obj/src/tests/angle_deqp_libtester/xeBatchExecutor.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeBatchExecutor.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeBatchExecutor.cpp
+  source_name_part = xeBatchExecutor
+build obj/src/tests/angle_deqp_libtester/xeBatchResult.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeBatchResult.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeBatchResult.cpp
+  source_name_part = xeBatchResult
+build obj/src/tests/angle_deqp_libtester/xeCallQueue.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeCallQueue.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeCallQueue.cpp
+  source_name_part = xeCallQueue
+build obj/src/tests/angle_deqp_libtester/xeCommLink.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeCommLink.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeCommLink.cpp
+  source_name_part = xeCommLink
+build obj/src/tests/angle_deqp_libtester/xeContainerFormatParser.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeContainerFormatParser.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeContainerFormatParser.cpp
+  source_name_part = xeContainerFormatParser
+build obj/src/tests/angle_deqp_libtester/xeLocalTcpIpLink.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeLocalTcpIpLink.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeLocalTcpIpLink.cpp
+  source_name_part = xeLocalTcpIpLink
+build obj/src/tests/angle_deqp_libtester/xeTcpIpLink.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTcpIpLink.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTcpIpLink.cpp
+  source_name_part = xeTcpIpLink
+build obj/src/tests/angle_deqp_libtester/xeTestCase.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestCase.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestCase.cpp
+  source_name_part = xeTestCase
+build obj/src/tests/angle_deqp_libtester/xeTestCaseListParser.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestCaseListParser.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestCaseListParser.cpp
+  source_name_part = xeTestCaseListParser
+build obj/src/tests/angle_deqp_libtester/xeTestCaseResult.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestCaseResult.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestCaseResult.cpp
+  source_name_part = xeTestCaseResult
+build obj/src/tests/angle_deqp_libtester/xeTestLogParser.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestLogParser.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestLogParser.cpp
+  source_name_part = xeTestLogParser
+build obj/src/tests/angle_deqp_libtester/xeTestLogWriter.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestLogWriter.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestLogWriter.cpp
+  source_name_part = xeTestLogWriter
+build obj/src/tests/angle_deqp_libtester/xeTestResultParser.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeTestResultParser.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeTestResultParser.cpp
+  source_name_part = xeTestResultParser
+build obj/src/tests/angle_deqp_libtester/xeXMLWriter.o: cxx ../../third_party/VK-GL-CTS/src/executor/xeXMLWriter.cpp || phony/build/chromeos_buildflags
+  source_file_part = xeXMLWriter.cpp
+  source_name_part = xeXMLWriter
+build obj/src/tests/angle_deqp_libtester/tcuANGLENativeDisplayFactory.o: cxx ../../src/tests/deqp_support/tcuANGLENativeDisplayFactory.cpp || phony/build/chromeos_buildflags
+  source_file_part = tcuANGLENativeDisplayFactory.cpp
+  source_name_part = tcuANGLENativeDisplayFactory
+build obj/src/tests/angle_deqp_libtester/tcuRandomOrderExecutor.o: cxx ../../src/tests/deqp_support/tcuRandomOrderExecutor.cpp || phony/build/chromeos_buildflags
+  source_file_part = tcuRandomOrderExecutor.cpp
+  source_name_part = tcuRandomOrderExecutor
+build obj/src/tests/angle_deqp_libtester/RenderDoc.o: cxx ../../src/tests/test_utils/RenderDoc.cpp || phony/build/chromeos_buildflags
+  source_file_part = RenderDoc.cpp
+  source_name_part = RenderDoc
+
+build phony/src/tests/angle_deqp_libtester: phony obj/src/tests/angle_deqp_libtester/xsDefs.o obj/src/tests/angle_deqp_libtester/xsExecutionServer.o obj/src/tests/angle_deqp_libtester/xsPosixFileReader.o obj/src/tests/angle_deqp_libtester/xsPosixTestProcess.o obj/src/tests/angle_deqp_libtester/xsProtocol.o obj/src/tests/angle_deqp_libtester/xsTcpServer.o obj/src/tests/angle_deqp_libtester/xsTestDriver.o obj/src/tests/angle_deqp_libtester/xsTestProcess.o obj/src/tests/angle_deqp_libtester/xeBatchExecutor.o obj/src/tests/angle_deqp_libtester/xeBatchResult.o obj/src/tests/angle_deqp_libtester/xeCallQueue.o obj/src/tests/angle_deqp_libtester/xeCommLink.o obj/src/tests/angle_deqp_libtester/xeContainerFormatParser.o obj/src/tests/angle_deqp_libtester/xeLocalTcpIpLink.o obj/src/tests/angle_deqp_libtester/xeTcpIpLink.o obj/src/tests/angle_deqp_libtester/xeTestCase.o obj/src/tests/angle_deqp_libtester/xeTestCaseListParser.o obj/src/tests/angle_deqp_libtester/xeTestCaseResult.o obj/src/tests/angle_deqp_libtester/xeTestLogParser.o obj/src/tests/angle_deqp_libtester/xeTestLogWriter.o obj/src/tests/angle_deqp_libtester/xeTestResultParser.o obj/src/tests/angle_deqp_libtester/xeXMLWriter.o obj/src/tests/angle_deqp_libtester/tcuANGLENativeDisplayFactory.o obj/src/tests/angle_deqp_libtester/tcuRandomOrderExecutor.o obj/src/tests/angle_deqp_libtester/RenderDoc.o || phony/src/tests/angle_deqp_framework_platform phony/src/tests/angle_deqp_glshared obj/libangle_common.a ./libangle_util.dylib.TOC phony/src/tests/angle_deqp_framework_common phony/src/tests/angle_deqp_framework_decpp phony/src/tests/angle_deqp_framework_debase phony/src/tests/angle_deqp_framework_delibs phony/src/tests/angle_deqp_framework_qphelper obj/third_party/libpng/libpng.a ./libchrome_zlib.dylib.TOC phony/src/tests/angle_deqp_framework_xexml phony/src/tests/angle_deqp_framework_egl phony/src/tests/angle_deqp_framework_opengl ./libthird_party_abseil-cpp_absl.dylib.TOC phony/xxhash phony/angle

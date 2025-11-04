@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/luci/git-credential-luci/mac-arm64",
+  "version_file": ".versions/git-credential-luci.cipd_version",
+  "files": [
+    {
+      "name": "git-credential-luci",
+      "size": 21078466,
+      "executable": true,
+      "hash": "khOGHOm5gRvErOpBW05d5swhvGdUdbuqic6IpBB7HRsC"
+    },
+    {
+      "name": ".versions/git-credential-luci.cipd_version",
+      "size": 135,
+      "hash": "FMVblatd6lleD2lZkXTHrLuv-loJPl2tDqKR4IhdWHsC"
+    }
+  ]
+}

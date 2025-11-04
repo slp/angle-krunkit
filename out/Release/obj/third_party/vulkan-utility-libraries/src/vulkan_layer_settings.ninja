@@ -1,0 +1,47 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DVK_ENABLE_BETA_EXTENSIONS -DVK_USE_PLATFORM_METAL_EXT -DVK_USE_PLATFORM_MACOS_MVK
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/vulkan-utility-libraries/src/include -I../../third_party/vulkan-headers/src/include
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wno-redundant-parens
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden
+label_name = vulkan_layer_settings
+target_out_dir = obj/third_party/vulkan-utility-libraries/src
+target_output_name = libvulkan_layer_settings
+
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/stub.o: cxx ../../third_party/vulkan-utility-libraries/src/scripts/gn/stub.cpp
+  source_file_part = stub.cpp
+  source_name_part = stub
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/layer_settings_manager.o: cxx ../../third_party/vulkan-utility-libraries/src/src/layer/layer_settings_manager.cpp
+  source_file_part = layer_settings_manager.cpp
+  source_name_part = layer_settings_manager
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/layer_settings_util.o: cxx ../../third_party/vulkan-utility-libraries/src/src/layer/layer_settings_util.cpp
+  source_file_part = layer_settings_util.cpp
+  source_name_part = layer_settings_util
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_layer_settings.o: cxx ../../third_party/vulkan-utility-libraries/src/src/layer/vk_layer_settings.cpp
+  source_file_part = vk_layer_settings.cpp
+  source_name_part = vk_layer_settings
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_layer_settings_helper.o: cxx ../../third_party/vulkan-utility-libraries/src/src/layer/vk_layer_settings_helper.cpp
+  source_file_part = vk_layer_settings_helper.cpp
+  source_name_part = vk_layer_settings_helper
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_core.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_core.cpp
+  source_file_part = vk_safe_struct_core.cpp
+  source_name_part = vk_safe_struct_core
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_ext.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_ext.cpp
+  source_file_part = vk_safe_struct_ext.cpp
+  source_name_part = vk_safe_struct_ext
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_khr.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_khr.cpp
+  source_file_part = vk_safe_struct_khr.cpp
+  source_name_part = vk_safe_struct_khr
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_utils.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_utils.cpp
+  source_file_part = vk_safe_struct_utils.cpp
+  source_name_part = vk_safe_struct_utils
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_vendor.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_vendor.cpp
+  source_file_part = vk_safe_struct_vendor.cpp
+  source_name_part = vk_safe_struct_vendor
+build obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_manual.o: cxx ../../third_party/vulkan-utility-libraries/src/src/vulkan/vk_safe_struct_manual.cpp
+  source_file_part = vk_safe_struct_manual.cpp
+  source_name_part = vk_safe_struct_manual
+
+build obj/third_party/vulkan-utility-libraries/src/libvulkan_layer_settings.a: alink obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/stub.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/layer_settings_manager.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/layer_settings_util.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_layer_settings.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_layer_settings_helper.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_core.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_ext.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_khr.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_utils.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_vendor.o obj/third_party/vulkan-utility-libraries/src/vulkan_layer_settings/vk_safe_struct_manual.o | ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ||
+  arflags = -T -s
+  output_extension = .a
+  output_dir = obj/third_party/vulkan-utility-libraries/src

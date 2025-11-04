@@ -1,0 +1,56 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DVK_ENABLE_BETA_EXTENSIONS -DSYSCONFDIR=\"/etc\" -DFALLBACK_CONFIG_DIRS=\"/etc/xdg\" -DFALLBACK_DATA_DIRS=\"/usr/local/share$:/usr/share\" -DAPPLE_STATIC_LOADER -DLOADER_USE_UNSAFE_FILE_SEARCH=1 -DVK_USE_PLATFORM_METAL_EXT -DVK_USE_PLATFORM_MACOS_MVK
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/vulkan-loader/src/loader/generated -I../../third_party/vulkan-loader/src/loader -I../../third_party/vulkan-headers/src/include
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wno-conversion -Wno-extra-semi -Wno-sign-compare -Wno-unreachable-code -Wno-unused-function -Wno-unused-variable -fno-sanitize=function -Wno-redundant-parens
+cflags_c = -std=c11
+label_name = libvulkan
+target_out_dir = obj/third_party/vulkan-loader/src
+target_output_name = libvulkan
+
+build obj/third_party/vulkan-loader/src/libvulkan/allocation.o: cc ../../third_party/vulkan-loader/src/loader/allocation.c | ../../unsafe_buffers_paths.txt
+  source_file_part = allocation.c
+  source_name_part = allocation
+build obj/third_party/vulkan-loader/src/libvulkan/cJSON.o: cc ../../third_party/vulkan-loader/src/loader/cJSON.c | ../../unsafe_buffers_paths.txt
+  source_file_part = cJSON.c
+  source_name_part = cJSON
+build obj/third_party/vulkan-loader/src/libvulkan/debug_utils.o: cc ../../third_party/vulkan-loader/src/loader/debug_utils.c | ../../unsafe_buffers_paths.txt
+  source_file_part = debug_utils.c
+  source_name_part = debug_utils
+build obj/third_party/vulkan-loader/src/libvulkan/extension_manual.o: cc ../../third_party/vulkan-loader/src/loader/extension_manual.c | ../../unsafe_buffers_paths.txt
+  source_file_part = extension_manual.c
+  source_name_part = extension_manual
+build obj/third_party/vulkan-loader/src/libvulkan/gpa_helper.o: cc ../../third_party/vulkan-loader/src/loader/gpa_helper.c | ../../unsafe_buffers_paths.txt
+  source_file_part = gpa_helper.c
+  source_name_part = gpa_helper
+build obj/third_party/vulkan-loader/src/libvulkan/loader_environment.o: cc ../../third_party/vulkan-loader/src/loader/loader_environment.c | ../../unsafe_buffers_paths.txt
+  source_file_part = loader_environment.c
+  source_name_part = loader_environment
+build obj/third_party/vulkan-loader/src/libvulkan/loader.o: cc ../../third_party/vulkan-loader/src/loader/loader.c | ../../unsafe_buffers_paths.txt
+  source_file_part = loader.c
+  source_name_part = loader
+build obj/third_party/vulkan-loader/src/libvulkan/loader_json.o: cc ../../third_party/vulkan-loader/src/loader/loader_json.c | ../../unsafe_buffers_paths.txt
+  source_file_part = loader_json.c
+  source_name_part = loader_json
+build obj/third_party/vulkan-loader/src/libvulkan/log.o: cc ../../third_party/vulkan-loader/src/loader/log.c | ../../unsafe_buffers_paths.txt
+  source_file_part = log.c
+  source_name_part = log
+build obj/third_party/vulkan-loader/src/libvulkan/settings.o: cc ../../third_party/vulkan-loader/src/loader/settings.c | ../../unsafe_buffers_paths.txt
+  source_file_part = settings.c
+  source_name_part = settings
+build obj/third_party/vulkan-loader/src/libvulkan/terminator.o: cc ../../third_party/vulkan-loader/src/loader/terminator.c | ../../unsafe_buffers_paths.txt
+  source_file_part = terminator.c
+  source_name_part = terminator
+build obj/third_party/vulkan-loader/src/libvulkan/trampoline.o: cc ../../third_party/vulkan-loader/src/loader/trampoline.c | ../../unsafe_buffers_paths.txt
+  source_file_part = trampoline.c
+  source_name_part = trampoline
+build obj/third_party/vulkan-loader/src/libvulkan/unknown_function_handling.o: cc ../../third_party/vulkan-loader/src/loader/unknown_function_handling.c | ../../unsafe_buffers_paths.txt
+  source_file_part = unknown_function_handling.c
+  source_name_part = unknown_function_handling
+build obj/third_party/vulkan-loader/src/libvulkan/wsi.o: cc ../../third_party/vulkan-loader/src/loader/wsi.c | ../../unsafe_buffers_paths.txt
+  source_file_part = wsi.c
+  source_name_part = wsi
+
+build obj/third_party/vulkan-loader/src/libvulkan.a: alink obj/third_party/vulkan-loader/src/libvulkan/allocation.o obj/third_party/vulkan-loader/src/libvulkan/cJSON.o obj/third_party/vulkan-loader/src/libvulkan/debug_utils.o obj/third_party/vulkan-loader/src/libvulkan/extension_manual.o obj/third_party/vulkan-loader/src/libvulkan/gpa_helper.o obj/third_party/vulkan-loader/src/libvulkan/loader_environment.o obj/third_party/vulkan-loader/src/libvulkan/loader.o obj/third_party/vulkan-loader/src/libvulkan/loader_json.o obj/third_party/vulkan-loader/src/libvulkan/log.o obj/third_party/vulkan-loader/src/libvulkan/settings.o obj/third_party/vulkan-loader/src/libvulkan/terminator.o obj/third_party/vulkan-loader/src/libvulkan/trampoline.o obj/third_party/vulkan-loader/src/libvulkan/unknown_function_handling.o obj/third_party/vulkan-loader/src/libvulkan/wsi.o | ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt ||
+  arflags = -T -s
+  output_extension = .a
+  output_dir = obj/third_party/vulkan-loader/src

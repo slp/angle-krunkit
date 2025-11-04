@@ -1,0 +1,20 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/chromeperf/pinpoint/mac-arm64",
+  "version_file": ".versions/pinpoint.cipd_version",
+  "install_mode": "copy",
+  "actual_install_mode": "copy",
+  "files": [
+    {
+      "name": "pinpoint",
+      "size": 54316610,
+      "executable": true,
+      "hash": "bcXHxRRY0rc_xb4c8SLusqZaboIZ_PhlPHeSioyH2f8C"
+    },
+    {
+      "name": ".versions/pinpoint.cipd_version",
+      "size": 124,
+      "hash": "K1wQENeU1hZt08CDWUzSszirdSPcFRZ0qmvtljGKhKEC"
+    }
+  ]
+}

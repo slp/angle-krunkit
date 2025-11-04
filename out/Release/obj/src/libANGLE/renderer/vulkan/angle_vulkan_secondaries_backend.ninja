@@ -1,0 +1,175 @@
+defines = -DANGLE_ENABLE_VULKAN_VALIDATION_LAYERS_BY_DEFAULT -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT -DANGLE_ENABLE_VULKAN -DANGLE_ENABLE_SWIFTSHADER -DANGLE_ENABLE_VULKAN_VALIDATION_LAYERS -DANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE -DLIBANGLE_IMPLEMENTATION -DANGLE_ENABLE_OVERLAY=1 -DANGLE_PLATFORM_EXPORT= -DANGLE_USE_ABSEIL -DABSL_ALLOCATOR_NOTHROW=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0 -DANGLE_USE_CUSTOM_LIBVULKAN -DLOADER_USE_UNSAFE_FILE_SEARCH=1 -DVK_USE_PLATFORM_METAL_EXT -DVK_USE_PLATFORM_MACOS_MVK -DANGLE_ENABLE_OPENGL -DANGLE_ENABLE_GL_DESKTOP_BACKEND -DANGLE_ENABLE_OPENGL_NULL -DGL_SILENCE_DEPRECATION -DANGLE_ENABLE_CGL -DANGLE_ENABLE_NULL -DANGLE_ENABLE_WGPU -DANGLE_ENABLE_METAL
+framework_dirs =
+include_dirs = -I../../buildtools/third_party/libc++ -I../../include -I../../src -I../../src/common/base -I../../src/common/third_party/xxhash -I../../third_party/abseil-cpp -I../../third_party/vulkan-loader/src/loader/generated -I../../third_party/vulkan-loader/src/loader -I../../third_party/vulkan-headers/src/include -I../../third_party/zlib/google -I../../third_party/zlib -I../../src/third_party/khronos -Igen/angle -I../../third_party/spirv-headers/src/include
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Wexit-time-destructors -Wglobal-constructors -Wbad-function-cast -Wconditional-uninitialized -Wextra-semi-stmt -Wfloat-conversion -Winconsistent-missing-destructor-override -Wmissing-field-initializers -Wnewline-eof -Wnon-virtual-dtor -Wredundant-parens -Wreturn-std-move -Wshadow -Wshadow-field -Wtautological-type-limit-compare -Wundefined-reinterpret-cast -Wunneeded-internal-declaration -Wunused-but-set-variable -Wsuggest-destructor-override -Wsuggest-override -Wparentheses -Wrange-loop-analysis -Wstrict-prototypes -Wunreachable-code-aggressive -Wshorten-64-to-32 -fno-sanitize=function -Wno-redundant-parens
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+cflags_objcc = -Wimplicit-retain-self -Wobjc-missing-property-synthesis -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+label_name = angle_vulkan_secondaries_backend
+target_out_dir = obj/src/libANGLE/renderer/vulkan
+target_output_name = angle_vulkan_secondaries_backend
+
+build phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps: phony phony/build/chromeos_buildflags phony/third_party/spirv-tools/src/spvtools_core_tables phony/third_party/spirv-tools/src/spvtools_generators_inc phony/third_party/spirv-tools/src/spvtools_language_header_cldebuginfo100 phony/third_party/spirv-tools/src/spvtools_language_header_debuginfo phony/third_party/spirv-tools/src/spvtools_language_header_vkdebuginfo100
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/AllocatorHelperPool.o: cxx ../../src/libANGLE/renderer/vulkan/AllocatorHelperPool.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = AllocatorHelperPool.cpp
+  source_name_part = AllocatorHelperPool
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/BufferVk.o: cxx ../../src/libANGLE/renderer/vulkan/BufferVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = BufferVk.cpp
+  source_name_part = BufferVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/CommandQueue.o: cxx ../../src/libANGLE/renderer/vulkan/CommandQueue.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = CommandQueue.cpp
+  source_name_part = CommandQueue
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/CompilerVk.o: cxx ../../src/libANGLE/renderer/vulkan/CompilerVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = CompilerVk.cpp
+  source_name_part = CompilerVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ContextVk.o: cxx ../../src/libANGLE/renderer/vulkan/ContextVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ContextVk.cpp
+  source_name_part = ContextVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DebugAnnotatorVk.o: cxx ../../src/libANGLE/renderer/vulkan/DebugAnnotatorVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = DebugAnnotatorVk.cpp
+  source_name_part = DebugAnnotatorVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DeviceVk.o: cxx ../../src/libANGLE/renderer/vulkan/DeviceVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = DeviceVk.cpp
+  source_name_part = DeviceVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DisplayVk.o: cxx ../../src/libANGLE/renderer/vulkan/DisplayVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = DisplayVk.cpp
+  source_name_part = DisplayVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/FenceNVVk.o: cxx ../../src/libANGLE/renderer/vulkan/FenceNVVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = FenceNVVk.cpp
+  source_name_part = FenceNVVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/FramebufferVk.o: cxx ../../src/libANGLE/renderer/vulkan/FramebufferVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = FramebufferVk.cpp
+  source_name_part = FramebufferVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ImageVk.o: cxx ../../src/libANGLE/renderer/vulkan/ImageVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ImageVk.cpp
+  source_name_part = ImageVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/MemoryObjectVk.o: cxx ../../src/libANGLE/renderer/vulkan/MemoryObjectVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = MemoryObjectVk.cpp
+  source_name_part = MemoryObjectVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/MemoryTracking.o: cxx ../../src/libANGLE/renderer/vulkan/MemoryTracking.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = MemoryTracking.cpp
+  source_name_part = MemoryTracking
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/OverlayVk.o: cxx ../../src/libANGLE/renderer/vulkan/OverlayVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = OverlayVk.cpp
+  source_name_part = OverlayVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/PersistentCommandPool.o: cxx ../../src/libANGLE/renderer/vulkan/PersistentCommandPool.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = PersistentCommandPool.cpp
+  source_name_part = PersistentCommandPool
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramExecutableVk.o: cxx ../../src/libANGLE/renderer/vulkan/ProgramExecutableVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ProgramExecutableVk.cpp
+  source_name_part = ProgramExecutableVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramPipelineVk.o: cxx ../../src/libANGLE/renderer/vulkan/ProgramPipelineVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ProgramPipelineVk.cpp
+  source_name_part = ProgramPipelineVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramVk.o: cxx ../../src/libANGLE/renderer/vulkan/ProgramVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ProgramVk.cpp
+  source_name_part = ProgramVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/QueryVk.o: cxx ../../src/libANGLE/renderer/vulkan/QueryVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = QueryVk.cpp
+  source_name_part = QueryVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/RenderTargetVk.o: cxx ../../src/libANGLE/renderer/vulkan/RenderTargetVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = RenderTargetVk.cpp
+  source_name_part = RenderTargetVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/RenderbufferVk.o: cxx ../../src/libANGLE/renderer/vulkan/RenderbufferVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = RenderbufferVk.cpp
+  source_name_part = RenderbufferVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SamplerVk.o: cxx ../../src/libANGLE/renderer/vulkan/SamplerVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SamplerVk.cpp
+  source_name_part = SamplerVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SecondaryCommandBuffer.o: cxx ../../src/libANGLE/renderer/vulkan/SecondaryCommandBuffer.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SecondaryCommandBuffer.cpp
+  source_name_part = SecondaryCommandBuffer
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SecondaryCommandPool.o: cxx ../../src/libANGLE/renderer/vulkan/SecondaryCommandPool.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SecondaryCommandPool.cpp
+  source_name_part = SecondaryCommandPool
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SemaphoreVk.o: cxx ../../src/libANGLE/renderer/vulkan/SemaphoreVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SemaphoreVk.cpp
+  source_name_part = SemaphoreVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShaderInterfaceVariableInfoMap.o: cxx ../../src/libANGLE/renderer/vulkan/ShaderInterfaceVariableInfoMap.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ShaderInterfaceVariableInfoMap.cpp
+  source_name_part = ShaderInterfaceVariableInfoMap
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShaderVk.o: cxx ../../src/libANGLE/renderer/vulkan/ShaderVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ShaderVk.cpp
+  source_name_part = ShaderVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShareGroupVk.o: cxx ../../src/libANGLE/renderer/vulkan/ShareGroupVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = ShareGroupVk.cpp
+  source_name_part = ShareGroupVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/Suballocation.o: cxx ../../src/libANGLE/renderer/vulkan/Suballocation.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = Suballocation.cpp
+  source_name_part = Suballocation
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SurfaceVk.o: cxx ../../src/libANGLE/renderer/vulkan/SurfaceVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SurfaceVk.cpp
+  source_name_part = SurfaceVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SyncVk.o: cxx ../../src/libANGLE/renderer/vulkan/SyncVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = SyncVk.cpp
+  source_name_part = SyncVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/TextureVk.o: cxx ../../src/libANGLE/renderer/vulkan/TextureVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = TextureVk.cpp
+  source_name_part = TextureVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/TransformFeedbackVk.o: cxx ../../src/libANGLE/renderer/vulkan/TransformFeedbackVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = TransformFeedbackVk.cpp
+  source_name_part = TransformFeedbackVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/UtilsVk.o: cxx ../../src/libANGLE/renderer/vulkan/UtilsVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = UtilsVk.cpp
+  source_name_part = UtilsVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VertexArrayVk.o: cxx ../../src/libANGLE/renderer/vulkan/VertexArrayVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = VertexArrayVk.cpp
+  source_name_part = VertexArrayVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VkImageImageSiblingVk.o: cxx ../../src/libANGLE/renderer/vulkan/VkImageImageSiblingVk.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = VkImageImageSiblingVk.cpp
+  source_name_part = VkImageImageSiblingVk
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VulkanSecondaryCommandBuffer.o: cxx ../../src/libANGLE/renderer/vulkan/VulkanSecondaryCommandBuffer.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = VulkanSecondaryCommandBuffer.cpp
+  source_name_part = VulkanSecondaryCommandBuffer
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_android_utils.o: cxx ../../src/libANGLE/renderer/vulkan/android/vk_android_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_android_utils.cpp
+  source_name_part = vk_android_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/spv_utils.o: cxx ../../src/libANGLE/renderer/vulkan/spv_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = spv_utils.cpp
+  source_name_part = spv_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_barrier_data.o: cxx ../../src/libANGLE/renderer/vulkan/vk_barrier_data.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_barrier_data.cpp
+  source_name_part = vk_barrier_data
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_cache_utils.o: cxx ../../src/libANGLE/renderer/vulkan/vk_cache_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_cache_utils.cpp
+  source_name_part = vk_cache_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_caps_utils.o: cxx ../../src/libANGLE/renderer/vulkan/vk_caps_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_caps_utils.cpp
+  source_name_part = vk_caps_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_format_table_autogen.o: cxx ../../src/libANGLE/renderer/vulkan/vk_format_table_autogen.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_format_table_autogen.cpp
+  source_name_part = vk_format_table_autogen
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_format_utils.o: cxx ../../src/libANGLE/renderer/vulkan/vk_format_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_format_utils.cpp
+  source_name_part = vk_format_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_helpers.o: cxx ../../src/libANGLE/renderer/vulkan/vk_helpers.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_helpers.cpp
+  source_name_part = vk_helpers
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_internal_shaders_autogen.o: cxx ../../src/libANGLE/renderer/vulkan/vk_internal_shaders_autogen.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_internal_shaders_autogen.cpp
+  source_name_part = vk_internal_shaders_autogen
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_mandatory_format_support_table_autogen.o: cxx ../../src/libANGLE/renderer/vulkan/vk_mandatory_format_support_table_autogen.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_mandatory_format_support_table_autogen.cpp
+  source_name_part = vk_mandatory_format_support_table_autogen
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_ref_counted_event.o: cxx ../../src/libANGLE/renderer/vulkan/vk_ref_counted_event.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_ref_counted_event.cpp
+  source_name_part = vk_ref_counted_event
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_renderer.o: cxx ../../src/libANGLE/renderer/vulkan/vk_renderer.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_renderer.cpp
+  source_name_part = vk_renderer
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_resource.o: cxx ../../src/libANGLE/renderer/vulkan/vk_resource.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_resource.cpp
+  source_name_part = vk_resource
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_utils.o: cxx ../../src/libANGLE/renderer/vulkan/vk_utils.cpp | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = vk_utils.cpp
+  source_name_part = vk_utils
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DisplayVkMac.o: objcxx ../../src/libANGLE/renderer/vulkan/mac/DisplayVkMac.mm | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = DisplayVkMac.mm
+  source_name_part = DisplayVkMac
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/IOSurfaceSurfaceVkMac.o: objcxx ../../src/libANGLE/renderer/vulkan/mac/IOSurfaceSurfaceVkMac.mm | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = IOSurfaceSurfaceVkMac.mm
+  source_name_part = IOSurfaceSurfaceVkMac
+build obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/WindowSurfaceVkMac.o: objcxx ../../src/libANGLE/renderer/vulkan/mac/WindowSurfaceVkMac.mm | ../../unsafe_buffers_paths.txt || phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend.inputdeps
+  source_file_part = WindowSurfaceVkMac.mm
+  source_name_part = WindowSurfaceVkMac
+
+build phony/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend: phony obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/AllocatorHelperPool.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/BufferVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/CommandQueue.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/CompilerVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ContextVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DebugAnnotatorVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DeviceVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DisplayVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/FenceNVVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/FramebufferVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ImageVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/MemoryObjectVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/MemoryTracking.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/OverlayVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/PersistentCommandPool.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramExecutableVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramPipelineVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ProgramVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/QueryVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/RenderTargetVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/RenderbufferVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SamplerVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SecondaryCommandBuffer.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SecondaryCommandPool.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SemaphoreVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShaderInterfaceVariableInfoMap.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShaderVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/ShareGroupVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/Suballocation.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SurfaceVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/SyncVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/TextureVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/TransformFeedbackVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/UtilsVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VertexArrayVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VkImageImageSiblingVk.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/VulkanSecondaryCommandBuffer.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_android_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/spv_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_barrier_data.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_cache_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_caps_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_format_table_autogen.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_format_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_helpers.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_internal_shaders_autogen.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_mandatory_format_support_table_autogen.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_ref_counted_event.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_renderer.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_resource.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/vk_utils.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/DisplayVkMac.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/IOSurfaceSurfaceVkMac.o obj/src/libANGLE/renderer/vulkan/angle_vulkan_secondaries_backend/WindowSurfaceVkMac.o || phony/libANGLE_headers phony/src/common/vulkan/vulkan phony/src/common/vulkan/angle_libvulkan_loader phony/src/common/vulkan/angle_vulkan_entry_points phony/src/libANGLE/renderer/vulkan/angle_vk_mem_alloc_wrapper phony/angle_abseil phony/angle_compression obj/libangle_gpu_info_util.a obj/libangle_image_util.a phony/src/common/spirv/angle_spirv_base phony/src/common/spirv/angle_spirv_builder phony/src/common/spirv/angle_spirv_headers phony/src/common/spirv/angle_spirv_parser obj/libangle_common.a ./libthird_party_abseil-cpp_absl.dylib.TOC phony/xxhash obj/third_party/vulkan-loader/src/libvulkan.a phony/src/common/vulkan/angle_vulkan_icd phony/third_party/vulkan_memory_allocator/vulkan_memory_allocator obj/third_party/zlib/google/libcompression_utils_portable.a ./libchrome_zlib.dylib.TOC phony/angle_image_util_headers phony/third_party/astc-encoder/astcenc obj/third_party/spirv-tools/src/libspvtools_val.a obj/third_party/spirv-tools/src/libspvtools.a phony/src/common/vulkan/vulkan_validation_layers

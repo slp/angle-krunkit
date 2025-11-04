@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/luci/luci-auth-ssh-helper/mac-arm64",
+  "version_file": ".versions/luci-auth-ssh-helper.cipd_version",
+  "files": [
+    {
+      "name": "luci-auth-ssh-helper",
+      "size": 6961730,
+      "executable": true,
+      "hash": "BiQbhjIcVA2utmVH1-mDKLPNl_iPCItkNH9KTcBsY8gC"
+    },
+    {
+      "name": ".versions/luci-auth-ssh-helper.cipd_version",
+      "size": 136,
+      "hash": "Xe62wKwmHIaDP6VTSWx8pIhbleb0wf8LGY_6YHGMrDcC"
+    }
+  ]
+}

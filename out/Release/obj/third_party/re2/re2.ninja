@@ -1,0 +1,80 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/re2/src -I../../third_party/abseil-cpp
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = re2
+target_out_dir = obj/third_party/re2
+target_output_name = libre2
+
+build obj/third_party/re2/re2/bitmap256.o: cxx ../../third_party/re2/src/re2/bitmap256.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = bitmap256.cc
+  source_name_part = bitmap256
+build obj/third_party/re2/re2/bitstate.o: cxx ../../third_party/re2/src/re2/bitstate.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = bitstate.cc
+  source_name_part = bitstate
+build obj/third_party/re2/re2/compile.o: cxx ../../third_party/re2/src/re2/compile.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = compile.cc
+  source_name_part = compile
+build obj/third_party/re2/re2/dfa.o: cxx ../../third_party/re2/src/re2/dfa.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = dfa.cc
+  source_name_part = dfa
+build obj/third_party/re2/re2/filtered_re2.o: cxx ../../third_party/re2/src/re2/filtered_re2.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = filtered_re2.cc
+  source_name_part = filtered_re2
+build obj/third_party/re2/re2/mimics_pcre.o: cxx ../../third_party/re2/src/re2/mimics_pcre.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = mimics_pcre.cc
+  source_name_part = mimics_pcre
+build obj/third_party/re2/re2/nfa.o: cxx ../../third_party/re2/src/re2/nfa.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = nfa.cc
+  source_name_part = nfa
+build obj/third_party/re2/re2/onepass.o: cxx ../../third_party/re2/src/re2/onepass.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = onepass.cc
+  source_name_part = onepass
+build obj/third_party/re2/re2/parse.o: cxx ../../third_party/re2/src/re2/parse.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = parse.cc
+  source_name_part = parse
+build obj/third_party/re2/re2/perl_groups.o: cxx ../../third_party/re2/src/re2/perl_groups.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = perl_groups.cc
+  source_name_part = perl_groups
+build obj/third_party/re2/re2/prefilter.o: cxx ../../third_party/re2/src/re2/prefilter.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = prefilter.cc
+  source_name_part = prefilter
+build obj/third_party/re2/re2/prefilter_tree.o: cxx ../../third_party/re2/src/re2/prefilter_tree.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = prefilter_tree.cc
+  source_name_part = prefilter_tree
+build obj/third_party/re2/re2/prog.o: cxx ../../third_party/re2/src/re2/prog.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = prog.cc
+  source_name_part = prog
+build obj/third_party/re2/re2/re2.o: cxx ../../third_party/re2/src/re2/re2.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = re2.cc
+  source_name_part = re2
+build obj/third_party/re2/re2/regexp.o: cxx ../../third_party/re2/src/re2/regexp.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = regexp.cc
+  source_name_part = regexp
+build obj/third_party/re2/re2/set.o: cxx ../../third_party/re2/src/re2/set.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = set.cc
+  source_name_part = set
+build obj/third_party/re2/re2/simplify.o: cxx ../../third_party/re2/src/re2/simplify.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = simplify.cc
+  source_name_part = simplify
+build obj/third_party/re2/re2/tostring.o: cxx ../../third_party/re2/src/re2/tostring.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = tostring.cc
+  source_name_part = tostring
+build obj/third_party/re2/re2/unicode_casefold.o: cxx ../../third_party/re2/src/re2/unicode_casefold.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = unicode_casefold.cc
+  source_name_part = unicode_casefold
+build obj/third_party/re2/re2/unicode_groups.o: cxx ../../third_party/re2/src/re2/unicode_groups.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = unicode_groups.cc
+  source_name_part = unicode_groups
+build obj/third_party/re2/re2/rune.o: cxx ../../third_party/re2/src/util/rune.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = rune.cc
+  source_name_part = rune
+build obj/third_party/re2/re2/strutil.o: cxx ../../third_party/re2/src/util/strutil.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = strutil.cc
+  source_name_part = strutil
+
+build obj/third_party/re2/libre2.a: alink obj/third_party/re2/re2/bitmap256.o obj/third_party/re2/re2/bitstate.o obj/third_party/re2/re2/compile.o obj/third_party/re2/re2/dfa.o obj/third_party/re2/re2/filtered_re2.o obj/third_party/re2/re2/mimics_pcre.o obj/third_party/re2/re2/nfa.o obj/third_party/re2/re2/onepass.o obj/third_party/re2/re2/parse.o obj/third_party/re2/re2/perl_groups.o obj/third_party/re2/re2/prefilter.o obj/third_party/re2/re2/prefilter_tree.o obj/third_party/re2/re2/prog.o obj/third_party/re2/re2/re2.o obj/third_party/re2/re2/regexp.o obj/third_party/re2/re2/set.o obj/third_party/re2/re2/simplify.o obj/third_party/re2/re2/tostring.o obj/third_party/re2/re2/unicode_casefold.o obj/third_party/re2/re2/unicode_groups.o obj/third_party/re2/re2/rune.o obj/third_party/re2/re2/strutil.o | ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt || ./libthird_party_abseil-cpp_absl.dylib.TOC
+  arflags = -T -s
+  output_extension = .a
+  output_dir = obj/third_party/re2

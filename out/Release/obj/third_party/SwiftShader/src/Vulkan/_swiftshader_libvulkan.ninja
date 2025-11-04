@@ -1,0 +1,117 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DVK_USE_PLATFORM_MACOS_MVK=1 -DVK_USE_PLATFORM_METAL_EXT=1 -DVK_EXPORT=__attribute__\(\(visibility\(\"default\"\)\)\) -DSWIFTSHADER_ENABLE_ASTC -DSWIFTSHADER_LEGACY_PRECISION=true -DSWIFTSHADER_ZERO_INITIALIZE_DEVICE_MEMORY -DMARL_USE_PTHREAD_THREAD_LOCAL=1
+framework_dirs =
+include_dirs = -I../../third_party/SwiftShader/src -I../../third_party/SwiftShader/include -I../../third_party/SwiftShader/third_party/SPIRV-Tools/include -I../../third_party/SwiftShader/third_party/SPIRV-Headers/include -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/SwiftShader/third_party/marl/include
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -O2 -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-shadow -Wno-unused-private-field -Wno-switch
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = _swiftshader_libvulkan
+target_out_dir = obj/third_party/SwiftShader/src/Vulkan
+target_output_name = _swiftshader_libvulkan
+
+build phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps: phony phony/third_party/SwiftShader/third_party/SPIRV-Tools/spvtools_core_tables phony/third_party/SwiftShader/third_party/SPIRV-Tools/spvtools_generators_inc phony/third_party/SwiftShader/third_party/SPIRV-Tools/spvtools_language_header_cldebuginfo100 phony/third_party/SwiftShader/third_party/SPIRV-Tools/spvtools_language_header_debuginfo phony/third_party/SwiftShader/third_party/SPIRV-Tools/spvtools_language_header_vkdebuginfo100
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkBuffer.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkBuffer.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkBuffer.cpp
+  source_name_part = VkBuffer
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkBufferView.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkBufferView.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkBufferView.cpp
+  source_name_part = VkBufferView
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkCommandBuffer.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkCommandBuffer.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkCommandBuffer.cpp
+  source_name_part = VkCommandBuffer
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkCommandPool.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkCommandPool.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkCommandPool.cpp
+  source_name_part = VkCommandPool
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDebugUtilsMessenger.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDebugUtilsMessenger.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDebugUtilsMessenger.cpp
+  source_name_part = VkDebugUtilsMessenger
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorPool.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDescriptorPool.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDescriptorPool.cpp
+  source_name_part = VkDescriptorPool
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorSet.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDescriptorSet.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDescriptorSet.cpp
+  source_name_part = VkDescriptorSet
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorSetLayout.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDescriptorSetLayout.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDescriptorSetLayout.cpp
+  source_name_part = VkDescriptorSetLayout
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorUpdateTemplate.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDescriptorUpdateTemplate.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDescriptorUpdateTemplate.cpp
+  source_name_part = VkDescriptorUpdateTemplate
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDevice.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDevice.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDevice.cpp
+  source_name_part = VkDevice
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDeviceMemory.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDeviceMemory.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDeviceMemory.cpp
+  source_name_part = VkDeviceMemory
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDeviceMemoryExternalHost.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkDeviceMemoryExternalHost.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkDeviceMemoryExternalHost.cpp
+  source_name_part = VkDeviceMemoryExternalHost
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkFormat.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkFormat.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkFormat.cpp
+  source_name_part = VkFormat
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkFramebuffer.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkFramebuffer.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkFramebuffer.cpp
+  source_name_part = VkFramebuffer
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkGetProcAddress.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkGetProcAddress.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkGetProcAddress.cpp
+  source_name_part = VkGetProcAddress
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkImage.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkImage.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkImage.cpp
+  source_name_part = VkImage
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkImageView.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkImageView.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkImageView.cpp
+  source_name_part = VkImageView
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkInstance.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkInstance.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkInstance.cpp
+  source_name_part = VkInstance
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkMemory.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkMemory.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkMemory.cpp
+  source_name_part = VkMemory
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPhysicalDevice.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkPhysicalDevice.cpp
+  source_name_part = VkPhysicalDevice
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipeline.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkPipeline.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkPipeline.cpp
+  source_name_part = VkPipeline
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipelineCache.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkPipelineCache.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkPipelineCache.cpp
+  source_name_part = VkPipelineCache
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipelineLayout.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkPipelineLayout.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkPipelineLayout.cpp
+  source_name_part = VkPipelineLayout
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPromotedExtensions.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkPromotedExtensions.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkPromotedExtensions.cpp
+  source_name_part = VkPromotedExtensions
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkQueryPool.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkQueryPool.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkQueryPool.cpp
+  source_name_part = VkQueryPool
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkQueue.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkQueue.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkQueue.cpp
+  source_name_part = VkQueue
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkRenderPass.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkRenderPass.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkRenderPass.cpp
+  source_name_part = VkRenderPass
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSampler.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkSampler.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkSampler.cpp
+  source_name_part = VkSampler
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSemaphore.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkSemaphore.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkSemaphore.cpp
+  source_name_part = VkSemaphore
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkShaderModule.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkShaderModule.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkShaderModule.cpp
+  source_name_part = VkShaderModule
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSpecializationInfo.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkSpecializationInfo.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkSpecializationInfo.cpp
+  source_name_part = VkSpecializationInfo
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkStringify.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkStringify.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkStringify.cpp
+  source_name_part = VkStringify
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkTimelineSemaphore.o: cxx ../../third_party/SwiftShader/src/Vulkan/VkTimelineSemaphore.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = VkTimelineSemaphore.cpp
+  source_name_part = VkTimelineSemaphore
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/libVulkan.o: cxx ../../third_party/SwiftShader/src/Vulkan/libVulkan.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = libVulkan.cpp
+  source_name_part = libVulkan
+build obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/main.o: cxx ../../third_party/SwiftShader/src/Vulkan/main.cpp || phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan.inputdeps
+  source_file_part = main.cpp
+  source_name_part = main
+
+build phony/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan: phony obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkBuffer.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkBufferView.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkCommandBuffer.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkCommandPool.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDebugUtilsMessenger.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorPool.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorSet.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorSetLayout.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDescriptorUpdateTemplate.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDevice.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDeviceMemory.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkDeviceMemoryExternalHost.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkFormat.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkFramebuffer.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkGetProcAddress.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkImage.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkImageView.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkInstance.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkMemory.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPhysicalDevice.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipeline.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipelineCache.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPipelineLayout.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkPromotedExtensions.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkQueryPool.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkQueue.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkRenderPass.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSampler.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSemaphore.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkShaderModule.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkSpecializationInfo.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkStringify.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/VkTimelineSemaphore.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/libVulkan.o obj/third_party/SwiftShader/src/Vulkan/_swiftshader_libvulkan/main.o || obj/third_party/SwiftShader/third_party/SPIRV-Tools/libspvtools_opt.a obj/third_party/SwiftShader/third_party/SPIRV-Tools/libspvtools_val.a phony/third_party/SwiftShader/third_party/marl/Marl phony/third_party/SwiftShader/src/Device/Device phony/third_party/SwiftShader/src/Pipeline/Pipeline phony/third_party/SwiftShader/src/Reactor/swiftshader_reactor phony/third_party/SwiftShader/src/System/System phony/third_party/SwiftShader/src/WSI/WSI obj/third_party/SwiftShader/third_party/SPIRV-Tools/libspvtools.a phony/third_party/SwiftShader/src/System/System_headers phony/third_party/SwiftShader/src/Reactor/swiftshader_llvm_reactor phony/third_party/SwiftShader/src/Reactor/swiftshader_reactor_base phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm_most phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm_debuginfo phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm_support phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm_transforms_scalar phony/third_party/SwiftShader/third_party/llvm-10.0/swiftshader_llvm_aarch64

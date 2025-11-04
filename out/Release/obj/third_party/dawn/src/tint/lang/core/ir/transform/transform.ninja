@@ -1,0 +1,113 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DTINT_BUILD_SPV_READER=0 -DTINT_BUILD_SPV_WRITER=1 -DTINT_BUILD_WGSL_READER=1 -DTINT_BUILD_WGSL_WRITER=1 -DTINT_BUILD_MSL_WRITER=1 -DTINT_BUILD_HLSL_WRITER=1 -DTINT_BUILD_GLSL_WRITER=1 -DTINT_BUILD_GLSL_VALIDATOR=1 -DTINT_BUILD_IR_BINARY=0 -DTINT_BUILD_IS_WIN=0 -DTINT_BUILD_IS_MAC=1 -DTINT_BUILD_IS_LINUX=0 -DTINT_ENABLE_IR_VALIDATION=1
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/dawn -Igen/third_party/dawn -I../../third_party/dawn/include
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden
+label_name = transform
+target_out_dir = obj/third_party/dawn/src/tint/lang/core/ir/transform
+target_output_name = transform
+
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/add_empty_entry_point.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/add_empty_entry_point.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = add_empty_entry_point.cc
+  source_name_part = add_empty_entry_point
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/array_length_from_immediate.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/array_length_from_immediate.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = array_length_from_immediate.cc
+  source_name_part = array_length_from_immediate
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/array_length_from_uniform.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/array_length_from_uniform.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = array_length_from_uniform.cc
+  source_name_part = array_length_from_uniform
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/bgra8unorm_polyfill.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/bgra8unorm_polyfill.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = bgra8unorm_polyfill.cc
+  source_name_part = bgra8unorm_polyfill
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/binary_polyfill.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/binary_polyfill.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = binary_polyfill.cc
+  source_name_part = binary_polyfill
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/binding_remapper.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/binding_remapper.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = binding_remapper.cc
+  source_name_part = binding_remapper
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/block_decorated_structs.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/block_decorated_structs.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = block_decorated_structs.cc
+  source_name_part = block_decorated_structs
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/builtin_polyfill.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/builtin_polyfill.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = builtin_polyfill.cc
+  source_name_part = builtin_polyfill
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/builtin_scalarize.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/builtin_scalarize.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = builtin_scalarize.cc
+  source_name_part = builtin_scalarize
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/change_immediate_to_uniform.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/change_immediate_to_uniform.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = change_immediate_to_uniform.cc
+  source_name_part = change_immediate_to_uniform
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/combine_access_instructions.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/combine_access_instructions.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = combine_access_instructions.cc
+  source_name_part = combine_access_instructions
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/conversion_polyfill.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/conversion_polyfill.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = conversion_polyfill.cc
+  source_name_part = conversion_polyfill
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/dead_code_elimination.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/dead_code_elimination.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = dead_code_elimination.cc
+  source_name_part = dead_code_elimination
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/demote_to_helper.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/demote_to_helper.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = demote_to_helper.cc
+  source_name_part = demote_to_helper
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/direct_variable_access.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/direct_variable_access.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = direct_variable_access.cc
+  source_name_part = direct_variable_access
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/multiplanar_external_texture.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/multiplanar_external_texture.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = multiplanar_external_texture.cc
+  source_name_part = multiplanar_external_texture
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/prepare_immediate_data.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/prepare_immediate_data.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = prepare_immediate_data.cc
+  source_name_part = prepare_immediate_data
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/preserve_padding.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/preserve_padding.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = preserve_padding.cc
+  source_name_part = preserve_padding
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/prevent_infinite_loops.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/prevent_infinite_loops.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = prevent_infinite_loops.cc
+  source_name_part = prevent_infinite_loops
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/remove_continue_in_switch.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/remove_continue_in_switch.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = remove_continue_in_switch.cc
+  source_name_part = remove_continue_in_switch
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/remove_terminator_args.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/remove_terminator_args.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = remove_terminator_args.cc
+  source_name_part = remove_terminator_args
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/rename_conflicts.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/rename_conflicts.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = rename_conflicts.cc
+  source_name_part = rename_conflicts
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/resource_binding.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/resource_binding.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = resource_binding.cc
+  source_name_part = resource_binding
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/resource_binding_helper.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/resource_binding_helper.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = resource_binding_helper.cc
+  source_name_part = resource_binding_helper
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/robustness.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/robustness.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = robustness.cc
+  source_name_part = robustness
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/shader_io.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/shader_io.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = shader_io.cc
+  source_name_part = shader_io
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/signed_integer_polyfill.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/signed_integer_polyfill.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = signed_integer_polyfill.cc
+  source_name_part = signed_integer_polyfill
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/single_entry_point.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/single_entry_point.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = single_entry_point.cc
+  source_name_part = single_entry_point
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/std140.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/std140.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = std140.cc
+  source_name_part = std140
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/substitute_overrides.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/substitute_overrides.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = substitute_overrides.cc
+  source_name_part = substitute_overrides
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/value_to_let.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/value_to_let.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = value_to_let.cc
+  source_name_part = value_to_let
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/vectorize_scalar_matrix_constructors.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/vectorize_scalar_matrix_constructors.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = vectorize_scalar_matrix_constructors.cc
+  source_name_part = vectorize_scalar_matrix_constructors
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/vertex_pulling.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/vertex_pulling.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = vertex_pulling.cc
+  source_name_part = vertex_pulling
+build obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/zero_init_workgroup_memory.o: cxx ../../third_party/dawn/src/tint/lang/core/ir/transform/zero_init_workgroup_memory.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = zero_init_workgroup_memory.cc
+  source_name_part = zero_init_workgroup_memory
+
+build phony/third_party/dawn/src/tint/lang/core/ir/transform/transform: phony obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/add_empty_entry_point.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/array_length_from_immediate.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/array_length_from_uniform.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/bgra8unorm_polyfill.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/binary_polyfill.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/binding_remapper.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/block_decorated_structs.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/builtin_polyfill.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/builtin_scalarize.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/change_immediate_to_uniform.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/combine_access_instructions.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/conversion_polyfill.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/dead_code_elimination.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/demote_to_helper.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/direct_variable_access.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/multiplanar_external_texture.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/prepare_immediate_data.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/preserve_padding.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/prevent_infinite_loops.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/remove_continue_in_switch.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/remove_terminator_args.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/rename_conflicts.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/resource_binding.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/resource_binding_helper.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/robustness.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/shader_io.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/signed_integer_polyfill.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/single_entry_point.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/std140.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/substitute_overrides.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/value_to_let.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/vectorize_scalar_matrix_constructors.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/vertex_pulling.o obj/third_party/dawn/src/tint/lang/core/ir/transform/transform/zero_init_workgroup_memory.o || obj/third_party/dawn/src/utils/libutils.a phony/third_party/dawn/src/tint/api/common/common phony/third_party/dawn/src/tint/lang/core/core phony/third_party/dawn/src/tint/lang/core/constant/constant phony/third_party/dawn/src/tint/lang/core/intrinsic/intrinsic phony/third_party/dawn/src/tint/lang/core/ir/ir phony/third_party/dawn/src/tint/lang/core/ir/analysis/analysis phony/third_party/dawn/src/tint/lang/core/ir/type/type phony/third_party/dawn/src/tint/lang/core/type/type phony/third_party/dawn/src/tint/utils/utils phony/third_party/dawn/src/tint/utils/containers/containers phony/third_party/dawn/src/tint/utils/diagnostic/diagnostic phony/third_party/dawn/src/tint/utils/ice/ice phony/third_party/dawn/src/tint/utils/macros/macros phony/third_party/dawn/src/tint/utils/math/math phony/third_party/dawn/src/tint/utils/memory/memory phony/third_party/dawn/src/tint/utils/rtti/rtti phony/third_party/dawn/src/tint/utils/symbol/symbol phony/third_party/dawn/src/tint/utils/text/text phony/third_party/dawn/src/tint/utils/system/system

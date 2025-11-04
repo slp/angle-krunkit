@@ -1,0 +1,5 @@
+#!/opt/s/w/ir/cache/pkgbuild/cpython3-biq2muf42l7tvj8lklv1qjkem4/contents/bin/python3.11
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()

@@ -1,0 +1,53 @@
+defines = -DABSL_BUILD_DLL -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DABSL_ALLOCATOR_NOTHROW=1
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/abseil-cpp
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wimplicit-int-conversion -Wshorten-64-to-32 -Wsign-compare -Wsign-conversion -Wtautological-unsigned-zero-compare -fvisibility=default
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -Wbool-conversion -Wconstant-conversion -Wenum-conversion -Wint-conversion -Wliteral-conversion -Wnon-literal-null-conversion -Wnull-conversion -Wobjc-literal-conversion -Wstring-conversion -Wbitfield-enum-conversion
+label_name = strings
+target_out_dir = obj/third_party/abseil-cpp/absl/strings
+target_output_name = strings
+
+build obj/third_party/abseil-cpp/absl/strings/strings/ascii.o: cxx ../../third_party/abseil-cpp/absl/strings/ascii.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = ascii.cc
+  source_name_part = ascii
+build obj/third_party/abseil-cpp/absl/strings/strings/charconv.o: cxx ../../third_party/abseil-cpp/absl/strings/charconv.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = charconv.cc
+  source_name_part = charconv
+build obj/third_party/abseil-cpp/absl/strings/strings/escaping.o: cxx ../../third_party/abseil-cpp/absl/strings/escaping.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = escaping.cc
+  source_name_part = escaping
+build obj/third_party/abseil-cpp/absl/strings/strings/charconv_bigint.o: cxx ../../third_party/abseil-cpp/absl/strings/internal/charconv_bigint.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = charconv_bigint.cc
+  source_name_part = charconv_bigint
+build obj/third_party/abseil-cpp/absl/strings/strings/charconv_parse.o: cxx ../../third_party/abseil-cpp/absl/strings/internal/charconv_parse.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = charconv_parse.cc
+  source_name_part = charconv_parse
+build obj/third_party/abseil-cpp/absl/strings/strings/damerau_levenshtein_distance.o: cxx ../../third_party/abseil-cpp/absl/strings/internal/damerau_levenshtein_distance.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = damerau_levenshtein_distance.cc
+  source_name_part = damerau_levenshtein_distance
+build obj/third_party/abseil-cpp/absl/strings/strings/memutil.o: cxx ../../third_party/abseil-cpp/absl/strings/internal/memutil.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = memutil.cc
+  source_name_part = memutil
+build obj/third_party/abseil-cpp/absl/strings/strings/stringify_sink.o: cxx ../../third_party/abseil-cpp/absl/strings/internal/stringify_sink.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = stringify_sink.cc
+  source_name_part = stringify_sink
+build obj/third_party/abseil-cpp/absl/strings/strings/match.o: cxx ../../third_party/abseil-cpp/absl/strings/match.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = match.cc
+  source_name_part = match
+build obj/third_party/abseil-cpp/absl/strings/strings/numbers.o: cxx ../../third_party/abseil-cpp/absl/strings/numbers.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = numbers.cc
+  source_name_part = numbers
+build obj/third_party/abseil-cpp/absl/strings/strings/str_cat.o: cxx ../../third_party/abseil-cpp/absl/strings/str_cat.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = str_cat.cc
+  source_name_part = str_cat
+build obj/third_party/abseil-cpp/absl/strings/strings/str_replace.o: cxx ../../third_party/abseil-cpp/absl/strings/str_replace.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = str_replace.cc
+  source_name_part = str_replace
+build obj/third_party/abseil-cpp/absl/strings/strings/str_split.o: cxx ../../third_party/abseil-cpp/absl/strings/str_split.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = str_split.cc
+  source_name_part = str_split
+build obj/third_party/abseil-cpp/absl/strings/strings/substitute.o: cxx ../../third_party/abseil-cpp/absl/strings/substitute.cc | ../../unsafe_buffers_paths.txt
+  source_file_part = substitute.cc
+  source_name_part = substitute
+
+build phony/third_party/abseil-cpp/absl/strings/strings: phony obj/third_party/abseil-cpp/absl/strings/strings/ascii.o obj/third_party/abseil-cpp/absl/strings/strings/charconv.o obj/third_party/abseil-cpp/absl/strings/strings/escaping.o obj/third_party/abseil-cpp/absl/strings/strings/charconv_bigint.o obj/third_party/abseil-cpp/absl/strings/strings/charconv_parse.o obj/third_party/abseil-cpp/absl/strings/strings/damerau_levenshtein_distance.o obj/third_party/abseil-cpp/absl/strings/strings/memutil.o obj/third_party/abseil-cpp/absl/strings/strings/stringify_sink.o obj/third_party/abseil-cpp/absl/strings/strings/match.o obj/third_party/abseil-cpp/absl/strings/strings/numbers.o obj/third_party/abseil-cpp/absl/strings/strings/str_cat.o obj/third_party/abseil-cpp/absl/strings/strings/str_replace.o obj/third_party/abseil-cpp/absl/strings/strings/str_split.o obj/third_party/abseil-cpp/absl/strings/strings/substitute.o || phony/third_party/abseil-cpp/absl/strings/string_view phony/third_party/abseil-cpp/absl/strings/charset phony/third_party/abseil-cpp/absl/strings/internal phony/third_party/abseil-cpp/absl/base/base phony/third_party/abseil-cpp/absl/base/endian phony/third_party/abseil-cpp/absl/base/raw_logging_internal phony/third_party/abseil-cpp/absl/base/throw_delegate phony/third_party/abseil-cpp/absl/numeric/bits phony/third_party/abseil-cpp/absl/numeric/int128 phony/third_party/abseil-cpp/absl/base/log_severity phony/third_party/abseil-cpp/absl/base/spinlock_wait

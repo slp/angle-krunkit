@@ -1,0 +1,20 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/rdb/mac-arm64",
+  "version_file": ".versions/rdb.cipd_version",
+  "install_mode": "copy",
+  "actual_install_mode": "copy",
+  "files": [
+    {
+      "name": "rdb",
+      "size": 22169106,
+      "executable": true,
+      "hash": "ABMm-XJzpg0j00qHaiU-VQ9cClfWE_81F-P8cwpOaUwC"
+    },
+    {
+      "name": ".versions/rdb.cipd_version",
+      "size": 114,
+      "hash": "VJGicuEPCk0xjfQYwcHI_glg1uxAVr4wMQo5vPjFtIIC"
+    }
+  ]
+}

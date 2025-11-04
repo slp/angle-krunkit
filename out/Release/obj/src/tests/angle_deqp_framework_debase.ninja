@@ -1,0 +1,38 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT
+framework_dirs =
+include_dirs = -I../../buildtools/third_party/libc++ -I../../include -I../../src -I../../third_party/VK-GL-CTS/src/framework/delibs/debase
+cflags = -Wno-nonportable-include-path -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare
+cflags_c = -std=c11
+label_name = angle_deqp_framework_debase
+target_out_dir = obj/src/tests
+target_output_name = angle_deqp_framework_debase
+
+build obj/src/tests/angle_deqp_framework_debase/deDefs.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deDefs.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deDefs.c
+  source_name_part = deDefs
+build obj/src/tests/angle_deqp_framework_debase/deFloat16.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deFloat16.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deFloat16.c
+  source_name_part = deFloat16
+build obj/src/tests/angle_deqp_framework_debase/deInt32.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deInt32.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deInt32.c
+  source_name_part = deInt32
+build obj/src/tests/angle_deqp_framework_debase/deInt32Test.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deInt32Test.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deInt32Test.c
+  source_name_part = deInt32Test
+build obj/src/tests/angle_deqp_framework_debase/deMath.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deMath.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deMath.c
+  source_name_part = deMath
+build obj/src/tests/angle_deqp_framework_debase/deMemory.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deMemory.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deMemory.c
+  source_name_part = deMemory
+build obj/src/tests/angle_deqp_framework_debase/deRandom.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deRandom.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deRandom.c
+  source_name_part = deRandom
+build obj/src/tests/angle_deqp_framework_debase/deSha1.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deSha1.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deSha1.c
+  source_name_part = deSha1
+build obj/src/tests/angle_deqp_framework_debase/deString.o: cc ../../third_party/VK-GL-CTS/src/framework/delibs/debase/deString.c | ../../unsafe_buffers_paths.txt
+  source_file_part = deString.c
+  source_name_part = deString
+
+build phony/src/tests/angle_deqp_framework_debase: phony obj/src/tests/angle_deqp_framework_debase/deDefs.o obj/src/tests/angle_deqp_framework_debase/deFloat16.o obj/src/tests/angle_deqp_framework_debase/deInt32.o obj/src/tests/angle_deqp_framework_debase/deInt32Test.o obj/src/tests/angle_deqp_framework_debase/deMath.o obj/src/tests/angle_deqp_framework_debase/deMemory.o obj/src/tests/angle_deqp_framework_debase/deRandom.o obj/src/tests/angle_deqp_framework_debase/deSha1.o obj/src/tests/angle_deqp_framework_debase/deString.o

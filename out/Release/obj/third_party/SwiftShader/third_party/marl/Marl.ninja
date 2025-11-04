@@ -1,0 +1,34 @@
+defines = -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DMARL_USE_PTHREAD_THREAD_LOCAL=1
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/SwiftShader/third_party/marl/include
+asmflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers -std=c11 --target=arm64-apple-macos -mno-outline -Wa,-fdebug-compilation-dir,. -g2 -gdwarf-aranges -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -O2 -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-shadow
+cflags_c = -std=c11
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = Marl
+target_out_dir = obj/third_party/SwiftShader/third_party/marl
+target_output_name = Marl
+
+build obj/third_party/SwiftShader/third_party/marl/Marl/debug.o: cxx ../../third_party/SwiftShader/third_party/marl/src/debug.cpp | ../../unsafe_buffers_paths.txt
+  source_file_part = debug.cpp
+  source_name_part = debug
+build obj/third_party/SwiftShader/third_party/marl/Marl/memory.o: cxx ../../third_party/SwiftShader/third_party/marl/src/memory.cpp | ../../unsafe_buffers_paths.txt
+  source_file_part = memory.cpp
+  source_name_part = memory
+build obj/third_party/SwiftShader/third_party/marl/Marl/scheduler.o: cxx ../../third_party/SwiftShader/third_party/marl/src/scheduler.cpp | ../../unsafe_buffers_paths.txt
+  source_file_part = scheduler.cpp
+  source_name_part = scheduler
+build obj/third_party/SwiftShader/third_party/marl/Marl/thread.o: cxx ../../third_party/SwiftShader/third_party/marl/src/thread.cpp | ../../unsafe_buffers_paths.txt
+  source_file_part = thread.cpp
+  source_name_part = thread
+build obj/third_party/SwiftShader/third_party/marl/Marl/trace.o: cxx ../../third_party/SwiftShader/third_party/marl/src/trace.cpp | ../../unsafe_buffers_paths.txt
+  source_file_part = trace.cpp
+  source_name_part = trace
+build obj/third_party/SwiftShader/third_party/marl/Marl/osfiber_aarch64.o: cc ../../third_party/SwiftShader/third_party/marl/src/osfiber_aarch64.c | ../../unsafe_buffers_paths.txt
+  source_file_part = osfiber_aarch64.c
+  source_name_part = osfiber_aarch64
+build obj/third_party/SwiftShader/third_party/marl/Marl/osfiber_asm_aarch64.o: asm ../../third_party/SwiftShader/third_party/marl/src/osfiber_asm_aarch64.S | ../../unsafe_buffers_paths.txt
+  source_file_part = osfiber_asm_aarch64.S
+  source_name_part = osfiber_asm_aarch64
+
+build phony/third_party/SwiftShader/third_party/marl/Marl: phony obj/third_party/SwiftShader/third_party/marl/Marl/debug.o obj/third_party/SwiftShader/third_party/marl/Marl/memory.o obj/third_party/SwiftShader/third_party/marl/Marl/scheduler.o obj/third_party/SwiftShader/third_party/marl/Marl/thread.o obj/third_party/SwiftShader/third_party/marl/Marl/trace.o obj/third_party/SwiftShader/third_party/marl/Marl/osfiber_aarch64.o obj/third_party/SwiftShader/third_party/marl/Marl/osfiber_asm_aarch64.o

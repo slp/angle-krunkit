@@ -1,0 +1,7 @@
+rust-std-aarch64-apple-darwin
+rustc
+cargo
+rust-analyzer-preview
+rustfmt-preview
+clippy-preview
+rust-src

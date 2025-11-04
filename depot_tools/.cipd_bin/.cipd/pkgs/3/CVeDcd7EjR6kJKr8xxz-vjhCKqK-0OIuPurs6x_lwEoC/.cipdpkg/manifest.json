@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/luci-auth/mac-arm64",
+  "version_file": ".versions/luci-auth.cipd_version",
+  "files": [
+    {
+      "name": "luci-auth",
+      "size": 19769026,
+      "executable": true,
+      "hash": "AkYbJjMPoJowMI5XFbC5xjRC9a_7vvJjooAjm-TiB8MC"
+    },
+    {
+      "name": ".versions/luci-auth.cipd_version",
+      "size": 120,
+      "hash": "3JX94gPviK4oKs8jmN4Oz0pFO8NoRuEeN2j7lq_pszYC"
+    }
+  ]
+}

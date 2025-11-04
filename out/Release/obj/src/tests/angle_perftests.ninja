@@ -1,0 +1,136 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT -DANGLE_HAS_HISTOGRAMS=1 -DANGLE_TEST_ENABLE_RENDERDOC_CAPTURE -DANGLE_USE_ABSEIL -DABSL_ALLOCATOR_NOTHROW=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0 -DANGLE_ENABLE_OPENGL -DANGLE_ENABLE_GL_DESKTOP_BACKEND -DANGLE_ENABLE_OPENGL_NULL -DGL_SILENCE_DEPRECATION -DANGLE_ENABLE_CGL -DANGLE_ENABLE_NULL -DANGLE_ENABLE_WGPU -DANGLE_ENABLE_METAL -DANGLE_ENABLE_VULKAN -DANGLE_ENABLE_SWIFTSHADER -DANGLE_ENABLE_VULKAN_VALIDATION_LAYERS -DANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE -DGTEST_API_= -DGTEST_HAS_POSIX_RE=0 -DGTEST_HAS_ABSL -DGTEST_NO_ABSL_FLAGS -DUNIT_TEST -DRAPIDJSON_HAS_STDSTRING -DLIBANGLE_IMPLEMENTATION -DANGLE_ENABLE_OVERLAY=1 -DANGLE_PLATFORM_EXPORT= -DANGLE_EGL_LIBRARY_NAME=\"libEGL\" -DANGLE_GLESV2_LIBRARY_NAME=\"libGLESv2\" -DANGLE_MESA_EGL_LIBRARY_NAME=\"mesa/src/egl/libEGL\" -DANGLE_MESA_GLESV2_LIBRARY_NAME=\"mesa/src/mapi/es2api/libGLESv2\" -DANGLE_VULKAN_SECONDARIES_EGL_LIBRARY_NAME=\"libEGL_vulkan_secondaries\" -DANGLE_VULKAN_SECONDARIES_GLESV2_LIBRARY_NAME=\"libGLESv2_vulkan_secondaries\" -DGL_GLES_PROTOTYPES=0 -DEGL_EGL_PROTOTYPES=0 -DANGLE_USE_UTIL_LOADER -DGOOGLE_PROTOBUF_NO_RTTI -DPROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT -DHAVE_PTHREAD -DPROTOBUF_USE_DLLS
+framework_dirs =
+include_dirs = -I../../src/tests -I../../buildtools/third_party/libc++ -I../../include -I../../src -Igen -I../../src/common/base -I../../src/common/third_party/xxhash -I../../third_party/abseil-cpp -I../../src/third_party/khronos -Igen/angle -I../.. -I../../third_party/googletest/custom -I../../third_party/googletest/src/googlemock/include -I../../third_party/googletest/src/googletest/include -I../../third_party/re2/src -I../../third_party/rapidjson/src/include -I../../third_party/spirv-tools/src/include -I../../third_party/catapult -I../../third_party/protobuf/src
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Wno-inconsistent-missing-override
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+label_name = angle_perftests
+target_out_dir = obj/src/tests
+target_output_name = angle_perftests
+
+build phony/src/tests/angle_perftests.inputdeps: phony phony/build/chromeos_buildflags phony/src/tests/angle_perftests__runner phony/third_party/catapult/tracing/tracing/proto/histogram_proto_gen phony/third_party/spirv-tools/src/spvtools_core_tables phony/third_party/spirv-tools/src/spvtools_generators_inc phony/third_party/spirv-tools/src/spvtools_language_header_cldebuginfo100 phony/third_party/spirv-tools/src/spvtools_language_header_debuginfo phony/third_party/spirv-tools/src/spvtools_language_header_vkdebuginfo100
+build obj/src/tests/angle_perftests/BindingPerf.o: cxx ../../src/tests/perf_tests/BindingPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = BindingPerf.cpp
+  source_name_part = BindingPerf
+build obj/src/tests/angle_perftests/BlitFramebufferPerf.o: cxx ../../src/tests/perf_tests/BlitFramebufferPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = BlitFramebufferPerf.cpp
+  source_name_part = BlitFramebufferPerf
+build obj/src/tests/angle_perftests/BufferSubData.o: cxx ../../src/tests/perf_tests/BufferSubData.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = BufferSubData.cpp
+  source_name_part = BufferSubData
+build obj/src/tests/angle_perftests/ClearPerf.o: cxx ../../src/tests/perf_tests/ClearPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = ClearPerf.cpp
+  source_name_part = ClearPerf
+build obj/src/tests/angle_perftests/DispatchComputePerf.o: cxx ../../src/tests/perf_tests/DispatchComputePerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = DispatchComputePerf.cpp
+  source_name_part = DispatchComputePerf
+build obj/src/tests/angle_perftests/DrawCallPerf.o: cxx ../../src/tests/perf_tests/DrawCallPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = DrawCallPerf.cpp
+  source_name_part = DrawCallPerf
+build obj/src/tests/angle_perftests/DrawElementsPerf.o: cxx ../../src/tests/perf_tests/DrawElementsPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = DrawElementsPerf.cpp
+  source_name_part = DrawElementsPerf
+build obj/src/tests/angle_perftests/DynamicPromotionPerfTest.o: cxx ../../src/tests/perf_tests/DynamicPromotionPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = DynamicPromotionPerfTest.cpp
+  source_name_part = DynamicPromotionPerfTest
+build obj/src/tests/angle_perftests/EGLMakeCurrentPerf.o: cxx ../../src/tests/perf_tests/EGLMakeCurrentPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = EGLMakeCurrentPerf.cpp
+  source_name_part = EGLMakeCurrentPerf
+build obj/src/tests/angle_perftests/FramebufferAttachmentPerfTest.o: cxx ../../src/tests/perf_tests/FramebufferAttachmentPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = FramebufferAttachmentPerfTest.cpp
+  source_name_part = FramebufferAttachmentPerfTest
+build obj/src/tests/angle_perftests/GenerateMipmapPerf.o: cxx ../../src/tests/perf_tests/GenerateMipmapPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = GenerateMipmapPerf.cpp
+  source_name_part = GenerateMipmapPerf
+build obj/src/tests/angle_perftests/ImagelessFramebufferPerfTest.o: cxx ../../src/tests/perf_tests/ImagelessFramebufferPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = ImagelessFramebufferPerfTest.cpp
+  source_name_part = ImagelessFramebufferPerfTest
+build obj/src/tests/angle_perftests/IndexConversionPerf.o: cxx ../../src/tests/perf_tests/IndexConversionPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = IndexConversionPerf.cpp
+  source_name_part = IndexConversionPerf
+build obj/src/tests/angle_perftests/InstancingPerf.o: cxx ../../src/tests/perf_tests/InstancingPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = InstancingPerf.cpp
+  source_name_part = InstancingPerf
+build obj/src/tests/angle_perftests/InterleavedAttributeData.o: cxx ../../src/tests/perf_tests/InterleavedAttributeData.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = InterleavedAttributeData.cpp
+  source_name_part = InterleavedAttributeData
+build obj/src/tests/angle_perftests/LinkProgramPerfTest.o: cxx ../../src/tests/perf_tests/LinkProgramPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = LinkProgramPerfTest.cpp
+  source_name_part = LinkProgramPerfTest
+build obj/src/tests/angle_perftests/MapBufferRange.o: cxx ../../src/tests/perf_tests/MapBufferRange.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MapBufferRange.cpp
+  source_name_part = MapBufferRange
+build obj/src/tests/angle_perftests/MultisampleResolvePerf.o: cxx ../../src/tests/perf_tests/MultisampleResolvePerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MultisampleResolvePerf.cpp
+  source_name_part = MultisampleResolvePerf
+build obj/src/tests/angle_perftests/MultisampledRenderToTexturePerf.o: cxx ../../src/tests/perf_tests/MultisampledRenderToTexturePerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MultisampledRenderToTexturePerf.cpp
+  source_name_part = MultisampledRenderToTexturePerf
+build obj/src/tests/angle_perftests/MultisampledSwapchainResolve.o: cxx ../../src/tests/perf_tests/MultisampledSwapchainResolve.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MultisampledSwapchainResolve.cpp
+  source_name_part = MultisampledSwapchainResolve
+build obj/src/tests/angle_perftests/MultiviewPerf.o: cxx ../../src/tests/perf_tests/MultiviewPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MultiviewPerf.cpp
+  source_name_part = MultiviewPerf
+build obj/src/tests/angle_perftests/ParallelLinkProgramPerfTest.o: cxx ../../src/tests/perf_tests/ParallelLinkProgramPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = ParallelLinkProgramPerfTest.cpp
+  source_name_part = ParallelLinkProgramPerfTest
+build obj/src/tests/angle_perftests/PointSprites.o: cxx ../../src/tests/perf_tests/PointSprites.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = PointSprites.cpp
+  source_name_part = PointSprites
+build obj/src/tests/angle_perftests/PreRotationPerf.o: cxx ../../src/tests/perf_tests/PreRotationPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = PreRotationPerf.cpp
+  source_name_part = PreRotationPerf
+build obj/src/tests/angle_perftests/ProgramPipelineObjectPerfTest.o: cxx ../../src/tests/perf_tests/ProgramPipelineObjectPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = ProgramPipelineObjectPerfTest.cpp
+  source_name_part = ProgramPipelineObjectPerfTest
+build obj/src/tests/angle_perftests/RGBImageAllocation.o: cxx ../../src/tests/perf_tests/RGBImageAllocation.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = RGBImageAllocation.cpp
+  source_name_part = RGBImageAllocation
+build obj/src/tests/angle_perftests/TextureSampling.o: cxx ../../src/tests/perf_tests/TextureSampling.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = TextureSampling.cpp
+  source_name_part = TextureSampling
+build obj/src/tests/angle_perftests/TextureUploadPerf.o: cxx ../../src/tests/perf_tests/TextureUploadPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = TextureUploadPerf.cpp
+  source_name_part = TextureUploadPerf
+build obj/src/tests/angle_perftests/TexturesPerf.o: cxx ../../src/tests/perf_tests/TexturesPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = TexturesPerf.cpp
+  source_name_part = TexturesPerf
+build obj/src/tests/angle_perftests/UniformsPerf.o: cxx ../../src/tests/perf_tests/UniformsPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = UniformsPerf.cpp
+  source_name_part = UniformsPerf
+build obj/src/tests/angle_perftests/VertexArrayPerfTest.o: cxx ../../src/tests/perf_tests/VertexArrayPerfTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = VertexArrayPerfTest.cpp
+  source_name_part = VertexArrayPerfTest
+build obj/src/tests/angle_perftests/VulkanBarriersPerf.o: cxx ../../src/tests/perf_tests/VulkanBarriersPerf.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = VulkanBarriersPerf.cpp
+  source_name_part = VulkanBarriersPerf
+build obj/src/tests/angle_perftests/glmark2Benchmark.o: cxx ../../src/tests/perf_tests/glmark2Benchmark.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = glmark2Benchmark.cpp
+  source_name_part = glmark2Benchmark
+build obj/src/tests/angle_perftests/ANGLETest.o: cxx ../../src/tests/test_utils/ANGLETest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = ANGLETest.cpp
+  source_name_part = ANGLETest
+build obj/src/tests/angle_perftests/MultiviewTest.o: cxx ../../src/tests/test_utils/MultiviewTest.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = MultiviewTest.cpp
+  source_name_part = MultiviewTest
+build obj/src/tests/angle_perftests/draw_call_perf_utils.o: cxx ../../src/tests/test_utils/draw_call_perf_utils.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = draw_call_perf_utils.cpp
+  source_name_part = draw_call_perf_utils
+build obj/src/tests/angle_perftests/angle_perftests_main.o: cxx ../../src/tests/angle_perftests_main.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = angle_perftests_main.cpp
+  source_name_part = angle_perftests_main
+build obj/src/tests/angle_perftests/TestSuite.o: cxx ../../src/tests/test_utils/runner/TestSuite.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = TestSuite.cpp
+  source_name_part = TestSuite
+build obj/src/tests/angle_perftests/HistogramWriter.o: cxx ../../src/tests/test_utils/runner/HistogramWriter.cpp | ../../util/osx/supports_automatic_graphics_switching.plist || phony/src/tests/angle_perftests.inputdeps
+  source_file_part = HistogramWriter.cpp
+  source_name_part = HistogramWriter
+
+build ./angle_perftests: link obj/src/tests/angle_perftests/BindingPerf.o obj/src/tests/angle_perftests/BlitFramebufferPerf.o obj/src/tests/angle_perftests/BufferSubData.o obj/src/tests/angle_perftests/ClearPerf.o obj/src/tests/angle_perftests/DispatchComputePerf.o obj/src/tests/angle_perftests/DrawCallPerf.o obj/src/tests/angle_perftests/DrawElementsPerf.o obj/src/tests/angle_perftests/DynamicPromotionPerfTest.o obj/src/tests/angle_perftests/EGLMakeCurrentPerf.o obj/src/tests/angle_perftests/FramebufferAttachmentPerfTest.o obj/src/tests/angle_perftests/GenerateMipmapPerf.o obj/src/tests/angle_perftests/ImagelessFramebufferPerfTest.o obj/src/tests/angle_perftests/IndexConversionPerf.o obj/src/tests/angle_perftests/InstancingPerf.o obj/src/tests/angle_perftests/InterleavedAttributeData.o obj/src/tests/angle_perftests/LinkProgramPerfTest.o obj/src/tests/angle_perftests/MapBufferRange.o obj/src/tests/angle_perftests/MultisampleResolvePerf.o obj/src/tests/angle_perftests/MultisampledRenderToTexturePerf.o obj/src/tests/angle_perftests/MultisampledSwapchainResolve.o obj/src/tests/angle_perftests/MultiviewPerf.o obj/src/tests/angle_perftests/ParallelLinkProgramPerfTest.o obj/src/tests/angle_perftests/PointSprites.o obj/src/tests/angle_perftests/PreRotationPerf.o obj/src/tests/angle_perftests/ProgramPipelineObjectPerfTest.o obj/src/tests/angle_perftests/RGBImageAllocation.o obj/src/tests/angle_perftests/TextureSampling.o obj/src/tests/angle_perftests/TextureUploadPerf.o obj/src/tests/angle_perftests/TexturesPerf.o obj/src/tests/angle_perftests/UniformsPerf.o obj/src/tests/angle_perftests/VertexArrayPerfTest.o obj/src/tests/angle_perftests/VulkanBarriersPerf.o obj/src/tests/angle_perftests/glmark2Benchmark.o obj/src/tests/angle_perftests/ANGLETest.o obj/src/tests/angle_perftests/MultiviewTest.o obj/src/tests/angle_perftests/draw_call_perf_utils.o obj/src/tests/angle_perftests/angle_perftests_main.o obj/src/tests/angle_perftests/TestSuite.o obj/src/tests/angle_perftests/HistogramWriter.o obj/util/angle_test_utils/Timer.o obj/util/angle_test_utils/test_utils.o obj/util/angle_test_utils/crash_handler_posix.o obj/util/angle_test_utils/test_utils_posix.o obj/third_party/googletest/gmock/gmock-cardinalities.o obj/third_party/googletest/gmock/gmock-internal-utils.o obj/third_party/googletest/gmock/gmock-matchers.o obj/third_party/googletest/gmock/gmock-spec-builders.o obj/third_party/googletest/gmock/gmock.o obj/third_party/googletest/gtest/chrome_custom_temp_dir.o obj/third_party/googletest/gtest/gtest_port_wrapper.o obj/third_party/googletest/gtest/gtest-assertion-result.o obj/third_party/googletest/gtest/gtest-death-test.o obj/third_party/googletest/gtest/gtest-filepath.o obj/third_party/googletest/gtest/gtest-matchers.o obj/third_party/googletest/gtest/gtest-printers.o obj/third_party/googletest/gtest/gtest-test-part.o obj/third_party/googletest/gtest/gtest-typed-test.o obj/third_party/googletest/gtest/gtest.o obj/src/tests/angle_perftests_shared/ANGLEComputeTestCL.o obj/src/tests/angle_perftests_shared/ANGLEPerfTest.o obj/src/tests/angle_perftests_shared/ANGLEPerfTestArgs.o obj/src/tests/angle_perftests_shared/DrawCallPerfParams.o obj/src/tests/angle_perftests_shared/perf_result_reporter.o obj/src/tests/angle_perftests_shared/perf_test.o obj/third_party/catapult/tracing/tracing/histogram/histogram.o obj/third_party/catapult/tracing/tracing/histogram/running_statistics.o obj/third_party/catapult/tracing/tracing/reserved_infos/reserved_infos.o obj/xxhash/xxhash.o obj/src/common/vulkan/angle_libvulkan_loader/libvulkan_loader.o obj/src/common/vulkan/angle_vulkan_icd/vulkan_icd.o obj/angle_gl_enum_utils/gl_enum_utils.o obj/angle_gl_enum_utils/gl_enum_utils_autogen.o obj/src/tests/angle_common_test_utils_shared/MultiThreadSteps.o obj/src/tests/angle_common_test_utils_shared/RenderDoc.o obj/src/tests/angle_common_test_utils_shared/angle_test_configs.o obj/src/tests/angle_common_test_utils_shared/angle_test_instantiate.o obj/src/tests/angle_common_test_utils_shared/angle_test_platform.o obj/src/tests/angle_common_test_utils_shared/angle_test_instantiate_apple.o obj/libangle_common.a obj/src/tests/libangle_test_expectations.a obj/testing/gtest/libgtest.a obj/third_party/spirv-tools/src/libspvtools_val.a obj/libangle_gpu_info_util.a obj/third_party/re2/libre2.a obj/third_party/spirv-tools/src/libspvtools.a obj/third_party/catapult/tracing/tracing/proto/libhistogram_proto.a | ./libthird_party_abseil-cpp_absl.dylib.TOC ./libangle_util.dylib.TOC ./libthird_party_protobuf_protobuf_lite.dylib.TOC ./libc++_chrome.dylib.TOC ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../util/osx/supports_automatic_graphics_switching.plist || phony/util/angle_test_utils phony/testing/gmock/gmock phony/third_party/googletest/gmock phony/third_party/googletest/gtest phony/src/tests/angle_perftests_shared phony/third_party/catapult/tracing/tracing/histogram phony/third_party/catapult/tracing/tracing/reserved_infos phony/src/tests/angle_perftests__runner phony/build/config/executable_deps phony/xxhash phony/src/common/vulkan/angle_libvulkan_loader phony/src/common/vulkan/angle_vulkan_icd phony/third_party/abseil-cpp/absl_full phony/angle_gl_enum_utils phony/src/tests/angle_common_test_utils_shared phony/angle ./libmetal_shader_cache_file_hooking.dylib.TOC
+  ldflags = -Wl,--no-warn-duplicate-rpath -Wl,-no_warn_duplicate_libraries -Werror -fuse-ld=lld -Wl,-fatal_warnings -Wl,--color-diagnostics -Wl,--strict-auto-link -Wl,--no-call-graph-profile-sort --target=arm64-apple-macos -Wl,-fixup_chains -Wl,-mllvm,-enable-machine-outliner=never -no-canonical-prefixes -nostdlib++ -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -Wl,-ObjC -Wl,-rpath,@loader_path/. -Wl,-rpath,@loader_path/../../.. -sectcreate __TEXT __info_plist ../../util/osx/supports_automatic_graphics_switching.plist -weak_framework Metal
+  libs = ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a
+  frameworks = -framework Metal -framework Cocoa -framework CoreFoundation -framework CoreGraphics -framework OpenGL -framework IOKit
+  swiftmodules =
+  output_extension =
+  output_dir = .
+  solibs = ./libthird_party_abseil-cpp_absl.dylib ./libangle_util.dylib ./libthird_party_protobuf_protobuf_lite.dylib ./libc++_chrome.dylib

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/luci/lucicfg/mac-arm64",
+  "version_file": ".versions/lucicfg.cipd_version",
+  "files": [
+    {
+      "name": "lucicfg",
+      "size": 34275282,
+      "executable": true,
+      "hash": "_9-iN-RrG3Q1p5d2SBi8jrwRvHjgzTSchcKeqk7zMWUC"
+    },
+    {
+      "name": ".versions/lucicfg.cipd_version",
+      "size": 123,
+      "hash": "9FXf269Mewdb2ZBlp0kxoC5G4P8tE2ukd4yw1Yv1-_wC"
+    }
+  ]
+}

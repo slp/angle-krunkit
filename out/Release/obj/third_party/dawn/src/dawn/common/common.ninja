@@ -1,0 +1,73 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DDAWN_ENABLE_ASSERTS -DDAWN_ENABLE_BACKEND_METAL -DDAWN_ENABLE_BACKEND_NULL -DDAWN_ENABLE_BACKEND_VULKAN -DDAWN_ENABLE_ERROR_INJECTION -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0 -DVK_USE_PLATFORM_METAL_EXT -DVK_USE_PLATFORM_MACOS_MVK
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -Igen/third_party/dawn/src -I../../third_party/dawn/src -Igen/third_party/dawn/include -I../../third_party/dawn/include -I../../third_party/abseil-cpp -I../../third_party/dawn/src/dawn/partition_alloc -I../../third_party/dawn -I../../third_party/vulkan-headers/src/include
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wno-assume -Wno-redundant-parens
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+cflags_objcc = -Wimplicit-retain-self -Wobjc-missing-property-synthesis -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fobjc-arc -fno-objc-arc-exceptions -Wobjc-property-assign-on-object-type -fvisibility-inlines-hidden
+label_name = common
+target_out_dir = obj/third_party/dawn/src/dawn/common
+target_output_name = libcommon
+
+build phony/third_party/dawn/src/dawn/common/common.inputdeps: phony phony/build/chromeos_buildflags phony/third_party/dawn/include/dawn/cpp_headers_gen phony/third_party/dawn/include/dawn/headers_gen phony/third_party/dawn/src/dawn/common/dawn_gpu_info_gen phony/third_party/dawn/src/dawn/common/dawn_version_gen
+build obj/third_party/dawn/src/dawn/common/common/AlignedAlloc.o: cxx ../../third_party/dawn/src/dawn/common/AlignedAlloc.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = AlignedAlloc.cpp
+  source_name_part = AlignedAlloc
+build obj/third_party/dawn/src/dawn/common/common/Assert.o: cxx ../../third_party/dawn/src/dawn/common/Assert.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Assert.cpp
+  source_name_part = Assert
+build obj/third_party/dawn/src/dawn/common/common/Defer.o: cxx ../../third_party/dawn/src/dawn/common/Defer.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Defer.cpp
+  source_name_part = Defer
+build obj/third_party/dawn/src/dawn/common/common/DynamicLib.o: cxx ../../third_party/dawn/src/dawn/common/DynamicLib.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = DynamicLib.cpp
+  source_name_part = DynamicLib
+build obj/third_party/dawn/src/dawn/common/common/FutureUtils.o: cxx ../../third_party/dawn/src/dawn/common/FutureUtils.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = FutureUtils.cpp
+  source_name_part = FutureUtils
+build obj/third_party/dawn/src/dawn/common/common/GPUInfo.o: cxx ../../third_party/dawn/src/dawn/common/GPUInfo.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = GPUInfo.cpp
+  source_name_part = GPUInfo
+build obj/third_party/dawn/src/dawn/common/common/Log.o: cxx ../../third_party/dawn/src/dawn/common/Log.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Log.cpp
+  source_name_part = Log
+build obj/third_party/dawn/src/dawn/common/common/Math.o: cxx ../../third_party/dawn/src/dawn/common/Math.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Math.cpp
+  source_name_part = Math
+build obj/third_party/dawn/src/dawn/common/common/RefCounted.o: cxx ../../third_party/dawn/src/dawn/common/RefCounted.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = RefCounted.cpp
+  source_name_part = RefCounted
+build obj/third_party/dawn/src/dawn/common/common/Result.o: cxx ../../third_party/dawn/src/dawn/common/Result.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Result.cpp
+  source_name_part = Result
+build obj/third_party/dawn/src/dawn/common/common/Sha3.o: cxx ../../third_party/dawn/src/dawn/common/Sha3.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = Sha3.cpp
+  source_name_part = Sha3
+build obj/third_party/dawn/src/dawn/common/common/SlabAllocator.o: cxx ../../third_party/dawn/src/dawn/common/SlabAllocator.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = SlabAllocator.cpp
+  source_name_part = SlabAllocator
+build obj/third_party/dawn/src/dawn/common/common/StringViewUtils.o: cxx ../../third_party/dawn/src/dawn/common/StringViewUtils.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = StringViewUtils.cpp
+  source_name_part = StringViewUtils
+build obj/third_party/dawn/src/dawn/common/common/SystemUtils.o: cxx ../../third_party/dawn/src/dawn/common/SystemUtils.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = SystemUtils.cpp
+  source_name_part = SystemUtils
+build obj/third_party/dawn/src/dawn/common/common/ThreadLocal.o: cxx ../../third_party/dawn/src/dawn/common/ThreadLocal.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = ThreadLocal.cpp
+  source_name_part = ThreadLocal
+build obj/third_party/dawn/src/dawn/common/common/WeakRefSupport.o: cxx ../../third_party/dawn/src/dawn/common/WeakRefSupport.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = WeakRefSupport.cpp
+  source_name_part = WeakRefSupport
+build obj/third_party/dawn/src/dawn/common/common/GPUInfo_autogen.o: cxx gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = GPUInfo_autogen.cpp
+  source_name_part = GPUInfo_autogen
+build obj/third_party/dawn/src/dawn/common/common/IOSurfaceUtils.o: cxx ../../third_party/dawn/src/dawn/common/IOSurfaceUtils.cpp | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = IOSurfaceUtils.cpp
+  source_name_part = IOSurfaceUtils
+build obj/third_party/dawn/src/dawn/common/common/SystemUtils_mac.o: objcxx ../../third_party/dawn/src/dawn/common/SystemUtils_mac.mm | ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/common.inputdeps
+  source_file_part = SystemUtils_mac.mm
+  source_name_part = SystemUtils_mac
+
+build obj/third_party/dawn/src/dawn/common/libcommon.a: alink obj/third_party/dawn/src/dawn/common/common/AlignedAlloc.o obj/third_party/dawn/src/dawn/common/common/Assert.o obj/third_party/dawn/src/dawn/common/common/Defer.o obj/third_party/dawn/src/dawn/common/common/DynamicLib.o obj/third_party/dawn/src/dawn/common/common/FutureUtils.o obj/third_party/dawn/src/dawn/common/common/GPUInfo.o obj/third_party/dawn/src/dawn/common/common/Log.o obj/third_party/dawn/src/dawn/common/common/Math.o obj/third_party/dawn/src/dawn/common/common/RefCounted.o obj/third_party/dawn/src/dawn/common/common/Result.o obj/third_party/dawn/src/dawn/common/common/Sha3.o obj/third_party/dawn/src/dawn/common/common/SlabAllocator.o obj/third_party/dawn/src/dawn/common/common/StringViewUtils.o obj/third_party/dawn/src/dawn/common/common/SystemUtils.o obj/third_party/dawn/src/dawn/common/common/ThreadLocal.o obj/third_party/dawn/src/dawn/common/common/WeakRefSupport.o obj/third_party/dawn/src/dawn/common/common/GPUInfo_autogen.o obj/third_party/dawn/src/dawn/common/common/IOSurfaceUtils.o obj/third_party/dawn/src/dawn/common/common/SystemUtils_mac.o | ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt || phony/third_party/dawn/src/dawn/common/abseil phony/third_party/dawn/src/dawn/common/dawn_gpu_info_gen phony/third_party/dawn/src/dawn/common/dawn_version_gen obj/third_party/dawn/src/utils/libutils.a phony/third_party/dawn/include/dawn/cpp_headers ./libthird_party_abseil-cpp_absl.dylib.TOC phony/third_party/dawn/include/dawn/headers
+  arflags = -T -s
+  output_extension = .a
+  output_dir = obj/third_party/dawn/src/dawn/common

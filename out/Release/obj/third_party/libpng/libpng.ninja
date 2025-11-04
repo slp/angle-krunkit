@@ -1,0 +1,68 @@
+defines = -DPNG_ARM_NEON_OPT=2 -DPNG_ARM_NEON_IMPLEMENTATION=1 -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libpng/src -I../../third_party/zlib
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-tautological-constant-out-of-range-compare
+cflags_c = -std=c11
+label_name = libpng
+target_out_dir = obj/third_party/libpng
+target_output_name = libpng
+
+build obj/third_party/libpng/libpng/png.o: cc ../../third_party/libpng/src/png.c | ../../unsafe_buffers_paths.txt
+  source_file_part = png.c
+  source_name_part = png
+build obj/third_party/libpng/libpng/pngerror.o: cc ../../third_party/libpng/src/pngerror.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngerror.c
+  source_name_part = pngerror
+build obj/third_party/libpng/libpng/pngget.o: cc ../../third_party/libpng/src/pngget.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngget.c
+  source_name_part = pngget
+build obj/third_party/libpng/libpng/pngmem.o: cc ../../third_party/libpng/src/pngmem.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngmem.c
+  source_name_part = pngmem
+build obj/third_party/libpng/libpng/pngpread.o: cc ../../third_party/libpng/src/pngpread.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngpread.c
+  source_name_part = pngpread
+build obj/third_party/libpng/libpng/pngread.o: cc ../../third_party/libpng/src/pngread.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngread.c
+  source_name_part = pngread
+build obj/third_party/libpng/libpng/pngrio.o: cc ../../third_party/libpng/src/pngrio.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngrio.c
+  source_name_part = pngrio
+build obj/third_party/libpng/libpng/pngrtran.o: cc ../../third_party/libpng/src/pngrtran.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngrtran.c
+  source_name_part = pngrtran
+build obj/third_party/libpng/libpng/pngrutil.o: cc ../../third_party/libpng/src/pngrutil.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngrutil.c
+  source_name_part = pngrutil
+build obj/third_party/libpng/libpng/pngset.o: cc ../../third_party/libpng/src/pngset.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngset.c
+  source_name_part = pngset
+build obj/third_party/libpng/libpng/pngtrans.o: cc ../../third_party/libpng/src/pngtrans.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngtrans.c
+  source_name_part = pngtrans
+build obj/third_party/libpng/libpng/pngwio.o: cc ../../third_party/libpng/src/pngwio.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngwio.c
+  source_name_part = pngwio
+build obj/third_party/libpng/libpng/pngwrite.o: cc ../../third_party/libpng/src/pngwrite.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngwrite.c
+  source_name_part = pngwrite
+build obj/third_party/libpng/libpng/pngwtran.o: cc ../../third_party/libpng/src/pngwtran.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngwtran.c
+  source_name_part = pngwtran
+build obj/third_party/libpng/libpng/pngwutil.o: cc ../../third_party/libpng/src/pngwutil.c | ../../unsafe_buffers_paths.txt
+  source_file_part = pngwutil.c
+  source_name_part = pngwutil
+build obj/third_party/libpng/libpng/arm_init.o: cc ../../third_party/libpng/src/arm/arm_init.c | ../../unsafe_buffers_paths.txt
+  source_file_part = arm_init.c
+  source_name_part = arm_init
+build obj/third_party/libpng/libpng/filter_neon_intrinsics.o: cc ../../third_party/libpng/src/arm/filter_neon_intrinsics.c | ../../unsafe_buffers_paths.txt
+  source_file_part = filter_neon_intrinsics.c
+  source_name_part = filter_neon_intrinsics
+build obj/third_party/libpng/libpng/palette_neon_intrinsics.o: cc ../../third_party/libpng/src/arm/palette_neon_intrinsics.c | ../../unsafe_buffers_paths.txt
+  source_file_part = palette_neon_intrinsics.c
+  source_name_part = palette_neon_intrinsics
+
+build obj/third_party/libpng/libpng.a: alink obj/third_party/libpng/libpng/png.o obj/third_party/libpng/libpng/pngerror.o obj/third_party/libpng/libpng/pngget.o obj/third_party/libpng/libpng/pngmem.o obj/third_party/libpng/libpng/pngpread.o obj/third_party/libpng/libpng/pngread.o obj/third_party/libpng/libpng/pngrio.o obj/third_party/libpng/libpng/pngrtran.o obj/third_party/libpng/libpng/pngrutil.o obj/third_party/libpng/libpng/pngset.o obj/third_party/libpng/libpng/pngtrans.o obj/third_party/libpng/libpng/pngwio.o obj/third_party/libpng/libpng/pngwrite.o obj/third_party/libpng/libpng/pngwtran.o obj/third_party/libpng/libpng/pngwutil.o obj/third_party/libpng/libpng/arm_init.o obj/third_party/libpng/libpng/filter_neon_intrinsics.o obj/third_party/libpng/libpng/palette_neon_intrinsics.o | ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt || ./libchrome_zlib.dylib.TOC
+  arflags = -T -s
+  output_extension = .a
+  output_dir = obj/third_party/libpng

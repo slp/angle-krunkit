@@ -1,0 +1,105 @@
+defines = -DLIBPROTOBUF_EXPORTS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DGOOGLE_PROTOBUF_NO_RTTI -DPROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT -DHAVE_PTHREAD -DPROTOBUF_USE_DLLS -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0
+framework_dirs =
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/protobuf/third_party/utf8_range -I../../third_party/protobuf/src -I../../third_party/abseil-cpp
+cflags = -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../build/config/clang/chrome/test/fuzzing/webidl_fuzzing/ -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Werror -Wno-exit-time-destructors -Wno-deprecated-this-capture
+cflags_cc = -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness
+label_name = protobuf_lite
+target_out_dir = obj/third_party/protobuf
+target_output_name = libthird_party_protobuf_protobuf_lite
+
+build obj/third_party/protobuf/protobuf_lite/any_lite.o: cxx ../../third_party/protobuf/src/google/protobuf/any_lite.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = any_lite.cc
+  source_name_part = any_lite
+build obj/third_party/protobuf/protobuf_lite/arena.o: cxx ../../third_party/protobuf/src/google/protobuf/arena.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = arena.cc
+  source_name_part = arena
+build obj/third_party/protobuf/protobuf_lite/arenastring.o: cxx ../../third_party/protobuf/src/google/protobuf/arenastring.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = arenastring.cc
+  source_name_part = arenastring
+build obj/third_party/protobuf/protobuf_lite/arenaz_sampler.o: cxx ../../third_party/protobuf/src/google/protobuf/arenaz_sampler.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = arenaz_sampler.cc
+  source_name_part = arenaz_sampler
+build obj/third_party/protobuf/protobuf_lite/extension_set.o: cxx ../../third_party/protobuf/src/google/protobuf/extension_set.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = extension_set.cc
+  source_name_part = extension_set
+build obj/third_party/protobuf/protobuf_lite/generated_enum_util.o: cxx ../../third_party/protobuf/src/google/protobuf/generated_enum_util.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = generated_enum_util.cc
+  source_name_part = generated_enum_util
+build obj/third_party/protobuf/protobuf_lite/generated_message_tctable_lite.o: cxx ../../third_party/protobuf/src/google/protobuf/generated_message_tctable_lite.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = generated_message_tctable_lite.cc
+  source_name_part = generated_message_tctable_lite
+build obj/third_party/protobuf/protobuf_lite/generated_message_util.o: cxx ../../third_party/protobuf/src/google/protobuf/generated_message_util.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = generated_message_util.cc
+  source_name_part = generated_message_util
+build obj/third_party/protobuf/protobuf_lite/implicit_weak_message.o: cxx ../../third_party/protobuf/src/google/protobuf/implicit_weak_message.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = implicit_weak_message.cc
+  source_name_part = implicit_weak_message
+build obj/third_party/protobuf/protobuf_lite/inlined_string_field.o: cxx ../../third_party/protobuf/src/google/protobuf/inlined_string_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = inlined_string_field.cc
+  source_name_part = inlined_string_field
+build obj/third_party/protobuf/protobuf_lite/coded_stream.o: cxx ../../third_party/protobuf/src/google/protobuf/io/coded_stream.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = coded_stream.cc
+  source_name_part = coded_stream
+build obj/third_party/protobuf/protobuf_lite/io_win32.o: cxx ../../third_party/protobuf/src/google/protobuf/io/io_win32.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = io_win32.cc
+  source_name_part = io_win32
+build obj/third_party/protobuf/protobuf_lite/printer.o: cxx ../../third_party/protobuf/src/google/protobuf/io/printer.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = printer.cc
+  source_name_part = printer
+build obj/third_party/protobuf/protobuf_lite/strtod.o: cxx ../../third_party/protobuf/src/google/protobuf/io/strtod.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = strtod.cc
+  source_name_part = strtod
+build obj/third_party/protobuf/protobuf_lite/tokenizer.o: cxx ../../third_party/protobuf/src/google/protobuf/io/tokenizer.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = tokenizer.cc
+  source_name_part = tokenizer
+build obj/third_party/protobuf/protobuf_lite/zero_copy_sink.o: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_sink.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = zero_copy_sink.cc
+  source_name_part = zero_copy_sink
+build obj/third_party/protobuf/protobuf_lite/zero_copy_stream.o: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = zero_copy_stream.cc
+  source_name_part = zero_copy_stream
+build obj/third_party/protobuf/protobuf_lite/zero_copy_stream_impl.o: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream_impl.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = zero_copy_stream_impl.cc
+  source_name_part = zero_copy_stream_impl
+build obj/third_party/protobuf/protobuf_lite/zero_copy_stream_impl_lite.o: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = zero_copy_stream_impl_lite.cc
+  source_name_part = zero_copy_stream_impl_lite
+build obj/third_party/protobuf/protobuf_lite/map.o: cxx ../../third_party/protobuf/src/google/protobuf/map.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = map.cc
+  source_name_part = map
+build obj/third_party/protobuf/protobuf_lite/message_lite.o: cxx ../../third_party/protobuf/src/google/protobuf/message_lite.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = message_lite.cc
+  source_name_part = message_lite
+build obj/third_party/protobuf/protobuf_lite/micro_string.o: cxx ../../third_party/protobuf/src/google/protobuf/micro_string.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = micro_string.cc
+  source_name_part = micro_string
+build obj/third_party/protobuf/protobuf_lite/parse_context.o: cxx ../../third_party/protobuf/src/google/protobuf/parse_context.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = parse_context.cc
+  source_name_part = parse_context
+build obj/third_party/protobuf/protobuf_lite/port.o: cxx ../../third_party/protobuf/src/google/protobuf/port.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = port.cc
+  source_name_part = port
+build obj/third_party/protobuf/protobuf_lite/raw_ptr.o: cxx ../../third_party/protobuf/src/google/protobuf/raw_ptr.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = raw_ptr.cc
+  source_name_part = raw_ptr
+build obj/third_party/protobuf/protobuf_lite/repeated_field.o: cxx ../../third_party/protobuf/src/google/protobuf/repeated_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = repeated_field.cc
+  source_name_part = repeated_field
+build obj/third_party/protobuf/protobuf_lite/repeated_ptr_field.o: cxx ../../third_party/protobuf/src/google/protobuf/repeated_ptr_field.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = repeated_ptr_field.cc
+  source_name_part = repeated_ptr_field
+build obj/third_party/protobuf/protobuf_lite/common.o: cxx ../../third_party/protobuf/src/google/protobuf/stubs/common.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = common.cc
+  source_name_part = common
+build obj/third_party/protobuf/protobuf_lite/wire_format_lite.o: cxx ../../third_party/protobuf/src/google/protobuf/wire_format_lite.cc | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = wire_format_lite.cc
+  source_name_part = wire_format_lite
+
+build ./libthird_party_protobuf_protobuf_lite.dylib ./libthird_party_protobuf_protobuf_lite.dylib.TOC: solink obj/third_party/protobuf/protobuf_lite/any_lite.o obj/third_party/protobuf/protobuf_lite/arena.o obj/third_party/protobuf/protobuf_lite/arenastring.o obj/third_party/protobuf/protobuf_lite/arenaz_sampler.o obj/third_party/protobuf/protobuf_lite/extension_set.o obj/third_party/protobuf/protobuf_lite/generated_enum_util.o obj/third_party/protobuf/protobuf_lite/generated_message_tctable_lite.o obj/third_party/protobuf/protobuf_lite/generated_message_util.o obj/third_party/protobuf/protobuf_lite/implicit_weak_message.o obj/third_party/protobuf/protobuf_lite/inlined_string_field.o obj/third_party/protobuf/protobuf_lite/coded_stream.o obj/third_party/protobuf/protobuf_lite/io_win32.o obj/third_party/protobuf/protobuf_lite/printer.o obj/third_party/protobuf/protobuf_lite/strtod.o obj/third_party/protobuf/protobuf_lite/tokenizer.o obj/third_party/protobuf/protobuf_lite/zero_copy_sink.o obj/third_party/protobuf/protobuf_lite/zero_copy_stream.o obj/third_party/protobuf/protobuf_lite/zero_copy_stream_impl.o obj/third_party/protobuf/protobuf_lite/zero_copy_stream_impl_lite.o obj/third_party/protobuf/protobuf_lite/map.o obj/third_party/protobuf/protobuf_lite/message_lite.o obj/third_party/protobuf/protobuf_lite/micro_string.o obj/third_party/protobuf/protobuf_lite/parse_context.o obj/third_party/protobuf/protobuf_lite/port.o obj/third_party/protobuf/protobuf_lite/raw_ptr.o obj/third_party/protobuf/protobuf_lite/repeated_field.o obj/third_party/protobuf/protobuf_lite/repeated_ptr_field.o obj/third_party/protobuf/protobuf_lite/common.o obj/third_party/protobuf/protobuf_lite/wire_format_lite.o obj/third_party/protobuf/utf8_range/utf8_range.o | ./libthird_party_abseil-cpp_absl.dylib.TOC ./libc++_chrome.dylib.TOC ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a ../../unsafe_buffers_paths.txt || phony/third_party/protobuf/utf8_range phony/build/config/shared_library_deps
+  ldflags = -fuse-ld=lld -Wl,-fatal_warnings -Wl,--color-diagnostics -Wl,--strict-auto-link -Wl,--no-call-graph-profile-sort --target=arm64-apple-macos -Wl,-fixup_chains -Wl,-mllvm,-enable-machine-outliner=never -no-canonical-prefixes -nostdlib++ -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -Wl,-ObjC -Wl,-rpath,@loader_path/. -Wl,-rpath,@loader_path/../../.. -Wl,--no-warn-duplicate-rpath -Wl,-no_warn_duplicate_libraries -Werror
+  libs = ../../third_party/llvm-build/Release+Asserts/lib/clang/22/lib/darwin/libclang_rt.osx.a
+  frameworks =
+  swiftmodules =
+  output_extension = .dylib
+  output_dir = .
+  solibs = ./libthird_party_abseil-cpp_absl.dylib ./libc++_chrome.dylib

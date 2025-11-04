@@ -1,0 +1,120 @@
+defines = -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__ARM_NEON__=1 -DCR_XCODE_VERSION=1640 -DCR_CLANG_REVISION=\"llvmorg-22-init-8940-g4d4cb757-84\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE -DCOMPONENT_BUILD -D_LIBCPP_INSTRUMENTED_WITH_ASAN=0 -DCR_LIBCXX_REVISION=dc1441a0c244cb94e5d1b992911c7b8895d88e2c -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DANGLE_ENABLE_SHARE_CONTEXT_LOCK=1 -DANGLE_ENABLE_CONTEXT_MUTEX=1 -DANGLE_HAS_ASTCENC -DANGLE_DEBUG_LAYERS_ENABLED -DANGLE_OUTSIDE_WEBKIT -DANGLE_ENABLE_OPENGL -DANGLE_ENABLE_GL_DESKTOP_BACKEND -DANGLE_ENABLE_OPENGL_NULL -DGL_SILENCE_DEPRECATION -DANGLE_ENABLE_CGL -DLIBANGLE_IMPLEMENTATION -DANGLE_ENABLE_OVERLAY=1 -DANGLE_PLATFORM_EXPORT= -DANGLE_USE_ABSEIL -DABSL_ALLOCATOR_NOTHROW=1 -DABSL_CONSUME_DLL -DABSL_FLAGS_STRIP_NAMES=0 -DANGLE_ENABLE_NULL -DANGLE_ENABLE_WGPU -DANGLE_ENABLE_METAL -DANGLE_ENABLE_VULKAN -DANGLE_ENABLE_SWIFTSHADER -DANGLE_ENABLE_VULKAN_VALIDATION_LAYERS -DANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE
+framework_dirs =
+include_dirs = -I../../buildtools/third_party/libc++ -I../../include -I../../src -I../../src/third_party/khronos -I../../src/common/base -I../../src/common/third_party/xxhash -I../../third_party/abseil-cpp -Igen/angle
+cflags = -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wgnu -Wno-gnu-anonymous-struct -Wno-gnu-conditional-omitted-operand -Wno-gnu-include-next -Wno-gnu-label-as-value -Wno-gnu-redeclared-enum -Wno-gnu-statement-expression -Wno-gnu-zero-variadic-macro-arguments -Wno-zero-length-array -Wthread-safety -Wunguarded-availability -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wno-nontrivial-memcall -Wno-uninitialized-const-pointer -Wshadow -Werror -fno-delete-null-pointer-checks -fno-strict-overflow -fno-ident -fno-math-errno -fno-strict-aliasing -fstack-protector-strong -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../clang-crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -fcomplete-member-pointers --target=arm64-apple-macos -mno-outline -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -Xclang -debug-info-kind=limited -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -mmacos-version-min=12.0 -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Wexit-time-destructors -Wglobal-constructors -Wbad-function-cast -Wconditional-uninitialized -Wextra-semi-stmt -Wfloat-conversion -Winconsistent-missing-destructor-override -Wmissing-field-initializers -Wnewline-eof -Wnon-virtual-dtor -Wredundant-parens -Wreturn-std-move -Wshadow -Wshadow-field -Wtautological-type-limit-compare -Wundefined-reinterpret-cast -Wunneeded-internal-declaration -Wunused-but-set-variable -Wsuggest-destructor-override -Wsuggest-override -Wparentheses -Wrange-loop-analysis -Wstrict-prototypes -Wunreachable-code-aggressive -Wshorten-64-to-32
+cflags_cc = -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-nullability-completeness -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+cflags_objcc = -Wimplicit-retain-self -Wobjc-missing-property-synthesis -std=c++20 -Wno-trigraphs -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include -fvisibility-inlines-hidden -Wno-thread-safety
+label_name = angle_gl_backend
+target_out_dir = obj/src/libANGLE/renderer/gl
+target_output_name = angle_gl_backend
+
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/BlitGL.o: cxx ../../src/libANGLE/renderer/gl/BlitGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = BlitGL.cpp
+  source_name_part = BlitGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/BufferGL.o: cxx ../../src/libANGLE/renderer/gl/BufferGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = BufferGL.cpp
+  source_name_part = BufferGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ClearMultiviewGL.o: cxx ../../src/libANGLE/renderer/gl/ClearMultiviewGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ClearMultiviewGL.cpp
+  source_name_part = ClearMultiviewGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/CompilerGL.o: cxx ../../src/libANGLE/renderer/gl/CompilerGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = CompilerGL.cpp
+  source_name_part = CompilerGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ContextGL.o: cxx ../../src/libANGLE/renderer/gl/ContextGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ContextGL.cpp
+  source_name_part = ContextGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/DispatchTableGL_autogen.o: cxx ../../src/libANGLE/renderer/gl/DispatchTableGL_autogen.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = DispatchTableGL_autogen.cpp
+  source_name_part = DispatchTableGL_autogen
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/DisplayGL.o: cxx ../../src/libANGLE/renderer/gl/DisplayGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = DisplayGL.cpp
+  source_name_part = DisplayGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/FenceNVGL.o: cxx ../../src/libANGLE/renderer/gl/FenceNVGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = FenceNVGL.cpp
+  source_name_part = FenceNVGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/FramebufferGL.o: cxx ../../src/libANGLE/renderer/gl/FramebufferGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = FramebufferGL.cpp
+  source_name_part = FramebufferGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/FunctionsGL.o: cxx ../../src/libANGLE/renderer/gl/FunctionsGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = FunctionsGL.cpp
+  source_name_part = FunctionsGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ImageGL.o: cxx ../../src/libANGLE/renderer/gl/ImageGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ImageGL.cpp
+  source_name_part = ImageGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/MemoryObjectGL.o: cxx ../../src/libANGLE/renderer/gl/MemoryObjectGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = MemoryObjectGL.cpp
+  source_name_part = MemoryObjectGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramExecutableGL.o: cxx ../../src/libANGLE/renderer/gl/ProgramExecutableGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ProgramExecutableGL.cpp
+  source_name_part = ProgramExecutableGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramGL.o: cxx ../../src/libANGLE/renderer/gl/ProgramGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ProgramGL.cpp
+  source_name_part = ProgramGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramPipelineGL.o: cxx ../../src/libANGLE/renderer/gl/ProgramPipelineGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ProgramPipelineGL.cpp
+  source_name_part = ProgramPipelineGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/QueryGL.o: cxx ../../src/libANGLE/renderer/gl/QueryGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = QueryGL.cpp
+  source_name_part = QueryGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/RenderbufferGL.o: cxx ../../src/libANGLE/renderer/gl/RenderbufferGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = RenderbufferGL.cpp
+  source_name_part = RenderbufferGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/RendererGL.o: cxx ../../src/libANGLE/renderer/gl/RendererGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = RendererGL.cpp
+  source_name_part = RendererGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/SamplerGL.o: cxx ../../src/libANGLE/renderer/gl/SamplerGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = SamplerGL.cpp
+  source_name_part = SamplerGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/SemaphoreGL.o: cxx ../../src/libANGLE/renderer/gl/SemaphoreGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = SemaphoreGL.cpp
+  source_name_part = SemaphoreGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ShaderGL.o: cxx ../../src/libANGLE/renderer/gl/ShaderGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ShaderGL.cpp
+  source_name_part = ShaderGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/StateManagerGL.o: cxx ../../src/libANGLE/renderer/gl/StateManagerGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = StateManagerGL.cpp
+  source_name_part = StateManagerGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/SurfaceGL.o: cxx ../../src/libANGLE/renderer/gl/SurfaceGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = SurfaceGL.cpp
+  source_name_part = SurfaceGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/SyncGL.o: cxx ../../src/libANGLE/renderer/gl/SyncGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = SyncGL.cpp
+  source_name_part = SyncGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/TextureGL.o: cxx ../../src/libANGLE/renderer/gl/TextureGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = TextureGL.cpp
+  source_name_part = TextureGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/TransformFeedbackGL.o: cxx ../../src/libANGLE/renderer/gl/TransformFeedbackGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = TransformFeedbackGL.cpp
+  source_name_part = TransformFeedbackGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/VertexArrayGL.o: cxx ../../src/libANGLE/renderer/gl/VertexArrayGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = VertexArrayGL.cpp
+  source_name_part = VertexArrayGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/formatutilsgl.o: cxx ../../src/libANGLE/renderer/gl/formatutilsgl.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = formatutilsgl.cpp
+  source_name_part = formatutilsgl
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/renderergl_utils.o: cxx ../../src/libANGLE/renderer/gl/renderergl_utils.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = renderergl_utils.cpp
+  source_name_part = renderergl_utils
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/ContextCGL.o: cxx ../../src/libANGLE/renderer/gl/cgl/ContextCGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = ContextCGL.cpp
+  source_name_part = ContextCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/DeviceCGL.o: cxx ../../src/libANGLE/renderer/gl/cgl/DeviceCGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = DeviceCGL.cpp
+  source_name_part = DeviceCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/DisplayCGL.o: objcxx ../../src/libANGLE/renderer/gl/cgl/DisplayCGL.mm | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = DisplayCGL.mm
+  source_name_part = DisplayCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/IOSurfaceSurfaceCGL.o: cxx ../../src/libANGLE/renderer/gl/cgl/IOSurfaceSurfaceCGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = IOSurfaceSurfaceCGL.cpp
+  source_name_part = IOSurfaceSurfaceCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/PbufferSurfaceCGL.o: cxx ../../src/libANGLE/renderer/gl/cgl/PbufferSurfaceCGL.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = PbufferSurfaceCGL.cpp
+  source_name_part = PbufferSurfaceCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/WindowSurfaceCGL.o: objcxx ../../src/libANGLE/renderer/gl/cgl/WindowSurfaceCGL.mm | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = WindowSurfaceCGL.mm
+  source_name_part = WindowSurfaceCGL
+build obj/src/libANGLE/renderer/gl/angle_gl_backend/null_functions.o: cxx ../../src/libANGLE/renderer/gl/null_functions.cpp | ../../unsafe_buffers_paths.txt || phony/build/chromeos_buildflags
+  source_file_part = null_functions.cpp
+  source_name_part = null_functions
+
+build phony/src/libANGLE/renderer/gl/angle_gl_backend: phony obj/src/libANGLE/renderer/gl/angle_gl_backend/BlitGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/BufferGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ClearMultiviewGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/CompilerGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ContextGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/DispatchTableGL_autogen.o obj/src/libANGLE/renderer/gl/angle_gl_backend/DisplayGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/FenceNVGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/FramebufferGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/FunctionsGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ImageGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/MemoryObjectGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramExecutableGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ProgramPipelineGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/QueryGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/RenderbufferGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/RendererGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/SamplerGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/SemaphoreGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ShaderGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/StateManagerGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/SurfaceGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/SyncGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/TextureGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/TransformFeedbackGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/VertexArrayGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/formatutilsgl.o obj/src/libANGLE/renderer/gl/angle_gl_backend/renderergl_utils.o obj/src/libANGLE/renderer/gl/angle_gl_backend/ContextCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/DeviceCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/DisplayCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/IOSurfaceSurfaceCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/PbufferSurfaceCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/WindowSurfaceCGL.o obj/src/libANGLE/renderer/gl/angle_gl_backend/null_functions.o || phony/libANGLE_headers obj/libangle_gpu_info_util.a obj/libangle_image_util.a obj/libangle_common.a ./libthird_party_abseil-cpp_absl.dylib.TOC phony/xxhash phony/src/common/vulkan/angle_libvulkan_loader phony/src/common/vulkan/angle_vulkan_icd phony/angle_image_util_headers phony/third_party/astc-encoder/astcenc

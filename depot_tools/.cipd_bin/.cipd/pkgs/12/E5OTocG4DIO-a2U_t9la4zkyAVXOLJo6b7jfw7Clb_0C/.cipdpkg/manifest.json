@@ -1,0 +1,20 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/dirmd/mac-arm64",
+  "version_file": ".versions/dirmd.cipd_version",
+  "install_mode": "copy",
+  "actual_install_mode": "copy",
+  "files": [
+    {
+      "name": "dirmd",
+      "size": 63810994,
+      "executable": true,
+      "hash": "lh1YPos9NJR4CGOM5xqetlcv72fNOoLGAr63a4P5rzoC"
+    },
+    {
+      "name": ".versions/dirmd.cipd_version",
+      "size": 116,
+      "hash": "FQeRHUzYSy8xTGfGaJ-8A-Ylh5mOjYUri9uLyKwL4nMC"
+    }
+  ]
+}

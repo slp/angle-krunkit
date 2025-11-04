@@ -1,0 +1,22 @@
+Generated during 'gn gen' by //BUILD.gn.
+
+### siso.gni ###
+use_siso=true
+
+### rbe.gni ###
+use_remoteexec=false
+use_reclient=false
+
+### compiler.gni ###
+use_thin_lto=false
+clang_need_input_root_absolute_path=false
+clang_need_input_root_absolute_path_for_objc=false
+
+### mac_sdk.gni ###
+mac_sdk_path=../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk
+
+#### get_concurrent_links.py ####
+per_link_gb=4 reserve_gb=0 secondary_per_link_gb=0
+# cpu_count from multiprocessing 12
+cpu_count=12 cpu_cap=12 mem_total_gb=36.0GiB adjusted_mem_total_gb=36.0GiB
+concurrent_links=9  (reason: RAM)

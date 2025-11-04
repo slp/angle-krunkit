@@ -1,0 +1,293 @@
+# Copyright 2025 The Dawn & Tint Authors
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+#
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from
+#    this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+"""Try Dawn builders using GN and a standalone Dawn checkout (instead of Chromium)."""
+
+load("@chromium-luci//builders.star", "os")
+load("@chromium-luci//try.star", "try_")
+load("//constants.star", "siso")
+load("//location_filters.star", "exclusion_filters")
+
+try_.defaults.set(
+    executable = "recipe:dawn/gn_v2_trybot",
+    builder_group = "try",
+    bucket = "try",
+    pool = "luci.chromium.gpu.try",
+    builderless = True,
+    build_numbers = True,
+    list_view = "try",
+    cq_group = "Dawn-CQ",
+    contact_team_email = "chrome-gpu-infra@google.com",
+    service_account = "dawn-try-builder@chops-service-accounts.iam.gserviceaccount.com",
+    siso_project = siso.project.DEFAULT_UNTRUSTED,
+    siso_remote_jobs = siso.remote_jobs.DEFAULT,
+)
+
+################################################################################
+# CQ Builders                                                                  #
+################################################################################
+
+## Templates
+
+def apply_cq_builder_defaults(kwargs):
+    kwargs.setdefault("max_concurrent_builds", 3)
+    return kwargs
+
+def apply_linux_cq_builder_defaults(kwargs):
+    kwargs = apply_cq_builder_defaults(kwargs)
+    kwargs.setdefault("os", os.LINUX_DEFAULT)
+    kwargs.setdefault("ssd", None)
+    return kwargs
+
+def apply_functional_builder_with_node_defaults(kwargs):
+    kwargs.setdefault("tryjob", try_.job(
+        location_filters = exclusion_filters.gn_clang_cq_file_exclusions,
+    ))
+    return kwargs
+
+def apply_functional_builder_without_node_defaults(kwargs):
+    kwargs.setdefault("tryjob", try_.job(
+        location_filters = exclusion_filters.gn_clang_no_node_cq_file_exclusions,
+    ))
+    return kwargs
+
+def apply_fuzz_builder_defaults(kwargs):
+    kwargs.setdefault("tryjob", try_.job(
+        location_filters = exclusion_filters.gn_clang_cq_fuzz_file_exclusions,
+    ))
+    return kwargs
+
+def dawn_linux_functional_cq_tester(**kwargs):
+    kwargs = apply_linux_cq_builder_defaults(kwargs)
+    kwargs = apply_functional_builder_with_node_defaults(kwargs)
+    try_.builder(**kwargs)
+
+def dawn_linux_functional_cq_tester_without_node(**kwargs):
+    kwargs = apply_linux_cq_builder_defaults(kwargs)
+    kwargs = apply_functional_builder_without_node_defaults(kwargs)
+    try_.builder(**kwargs)
+
+def dawn_linux_fuzz_cq_tester(**kwargs):
+    kwargs = apply_linux_cq_builder_defaults(kwargs)
+    kwargs = apply_fuzz_builder_defaults(kwargs)
+    try_.builder(**kwargs)
+
+## Functional testers
+
+dawn_linux_functional_cq_tester(
+    name = "dawn-cq-linux-x64-dbg",
+    description_html = "Tests debug Dawn on Linux/x64 on multiple hardware configs. Blocks CL submission",
+    mirrors = [
+        "ci/dawn-linux-x64-builder-dbg",
+        "ci/dawn-linux-x64-sws-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x64-builder-dbg",
+)
+
+dawn_linux_functional_cq_tester(
+    name = "dawn-cq-linux-x64-rel",
+    description_html = "Tests release Dawn on Linux/x64 on multiple hardware configs. Blocks CL submission",
+    mirrors = [
+        "ci/dawn-linux-x64-builder-rel",
+        "ci/dawn-linux-x64-sws-rel",
+    ],
+    gn_args = "ci/dawn-linux-x64-builder-rel",
+)
+
+dawn_linux_functional_cq_tester_without_node(
+    name = "dawn-cq-linux-x86-dbg",
+    description_html = "Tests debug Dawn on Linux/x86 on multiple hardware configs. Blocks CL submission",
+    mirrors = [
+        "ci/dawn-linux-x86-builder-dbg",
+        "ci/dawn-linux-x86-sws-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x86-builder-dbg",
+)
+
+dawn_linux_functional_cq_tester_without_node(
+    name = "dawn-cq-linux-x86-rel",
+    description_html = "Tests release Dawn on Linux/x86 on multiple hardware configs. Blocks CL submission",
+    mirrors = [
+        "ci/dawn-linux-x86-builder-rel",
+        "ci/dawn-linux-x86-sws-rel",
+    ],
+    gn_args = "ci/dawn-linux-x86-builder-rel",
+)
+
+## Fuzz testers
+
+dawn_linux_fuzz_cq_tester(
+    name = "dawn-cq-linux-x64-fuzz-dbg",
+    description_html = "Compiles and runs debug Dawn binaries for 'tools/run fuzz' for Linux/x64. Blocks CL submission.",
+    mirrors = [
+        "ci/dawn-linux-x64-fuzz-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x64-fuzz-dbg",
+)
+
+dawn_linux_fuzz_cq_tester(
+    name = "dawn-cq-linux-x64-fuzz-rel",
+    description_html = "Compiles and runs release Dawn binaries for 'tools/run fuzz' for Linux/x64. Blocks CL submission.",
+    mirrors = [
+        "ci/dawn-linux-x64-fuzz-rel",
+    ],
+    gn_args = "ci/dawn-linux-x64-fuzz-rel",
+)
+
+dawn_linux_fuzz_cq_tester(
+    name = "dawn-cq-linux-x86-fuzz-dbg",
+    description_html = "Compiles and runs debug Dawn binaries for 'tools/run fuzz' for Linux/x86. Blocks CL submission.",
+    mirrors = [
+        "ci/dawn-linux-x86-fuzz-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x86-fuzz-dbg",
+)
+
+dawn_linux_fuzz_cq_tester(
+    name = "dawn-cq-linux-x86-fuzz-rel",
+    description_html = "Compiles and runs release Dawn binaries for 'tools/run fuzz' for Linux/x86. Blocks CL submission.",
+    mirrors = [
+        "ci/dawn-linux-x86-fuzz-rel",
+    ],
+    gn_args = "ci/dawn-linux-x86-fuzz-rel",
+)
+
+################################################################################
+# Manual Trybots                                                               #
+################################################################################
+
+## Templates
+
+def dawn_linux_manual_builder(*, name, **kwargs):
+    return try_.builder(
+        name = name,
+        max_concurrent_builds = 1,
+        os = os.LINUX_DEFAULT,
+        ssd = None,
+        **kwargs
+    )
+
+def dawn_win_manual_builder(*, name, **kwargs):
+    return try_.builder(
+        name = name,
+        max_concurrent_builds = 1,
+        os = os.WINDOWS_DEFAULT,
+        # This can be changed to prefer SSDs once the GPU Windows GCE fleet has
+        # been switched to primarily using SSDs.
+        ssd = None,
+        **kwargs
+    )
+
+## Functional testers
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x64-sws-dbg",
+    description_html = "Tests debug Dawn on Linux/x64 with SwiftShader. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x64-builder-dbg",
+        "ci/dawn-linux-x64-sws-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x64-builder-dbg",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x64-sws-rel",
+    description_html = "Tests release Dawn on Linux/x64 with SwiftShader. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x64-builder-rel",
+        "ci/dawn-linux-x64-sws-rel",
+    ],
+    gn_args = "ci/dawn-linux-x64-builder-rel",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x86-sws-dbg",
+    description_html = "Tests debug Dawn on Linux/x86 with SwiftShader. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x86-builder-dbg",
+        "ci/dawn-linux-x86-sws-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x86-builder-dbg",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x86-sws-rel",
+    description_html = "Tests release Dawn on Linux/x86 with SwiftShader. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x86-builder-rel",
+        "ci/dawn-linux-x86-sws-rel",
+    ],
+    gn_args = "ci/dawn-linux-x86-builder-rel",
+)
+
+dawn_win_manual_builder(
+    name = "dawn-try-win-x64-sws-rel",
+    description_html = "Tests release Dawn on Windows/x64 with SwiftShader. Manual only.",
+    mirrors = [
+        "ci/dawn-win-x64-builder-rel",
+        "ci/dawn-win-x64-sws-rel",
+    ],
+    gn_args = "ci/dawn-win-x64-builder-rel",
+)
+
+## Fuzz testers
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x64-fuzz-dbg",
+    description_html = "Runs debug Dawn fuzz tests on Linux/x64. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x64-fuzz-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x64-fuzz-dbg",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x64-fuzz-rel",
+    description_html = "Runs release Dawn fuzz tests on Linux/x64. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x64-fuzz-rel",
+    ],
+    gn_args = "ci/dawn-linux-x64-fuzz-rel",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x86-fuzz-dbg",
+    description_html = "Runs debug Dawn fuzz tests on Linux/x86. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x86-fuzz-dbg",
+    ],
+    gn_args = "ci/dawn-linux-x86-fuzz-dbg",
+)
+
+dawn_linux_manual_builder(
+    name = "dawn-try-linux-x86-fuzz-rel",
+    description_html = "Runs release Dawn fuzz tests on Linux/x86. Manual only.",
+    mirrors = [
+        "ci/dawn-linux-x86-fuzz-rel",
+    ],
+    gn_args = "ci/dawn-linux-x86-fuzz-rel",
+)

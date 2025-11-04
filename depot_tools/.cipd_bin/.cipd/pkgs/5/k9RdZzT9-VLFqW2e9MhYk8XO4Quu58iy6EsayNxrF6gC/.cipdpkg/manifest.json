@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/prpc/mac-arm64",
+  "version_file": ".versions/prpc.cipd_version",
+  "files": [
+    {
+      "name": "prpc",
+      "size": 16808322,
+      "executable": true,
+      "hash": "cPRLpDIKWKhniosFYIKesLR4tjnZQ4ILAR-Wsw8lBZEC"
+    },
+    {
+      "name": ".versions/prpc.cipd_version",
+      "size": 115,
+      "hash": "Fl9KKog8aYKMTAuOeVb-D50HzIJqC3G_jqw6aSMa_0UC"
+    }
+  ]
+}
